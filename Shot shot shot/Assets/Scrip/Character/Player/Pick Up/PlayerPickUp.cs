@@ -43,8 +43,11 @@ public class PlayerPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Colides");
+
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("is player");
 
             if (Input.GetKey(KeyCode.E))
             {

@@ -20,6 +20,8 @@ public class GunBase : MonoBehaviour
         {
             Shoot();
         }
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.green);
+
     }
 
     public void Shoot()
@@ -28,6 +30,7 @@ public class GunBase : MonoBehaviour
         if (Physics.Raycast(cam.transform.position,cam.transform.forward,out hit, range))
         {
             Debug.Log(hit.transform.name);
+
         }
     }
 }
