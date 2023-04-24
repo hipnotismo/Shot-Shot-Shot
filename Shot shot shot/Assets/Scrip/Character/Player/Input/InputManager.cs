@@ -9,11 +9,20 @@ public class InputManager : MonoBehaviour
     [Header("References")]
     private CharacterMovement plMov;
     private PlayerCamera plLook;
+    private PickUpWeapon pickUp;
+
+    public delegate void ShotAction();
+    public static event ShotAction ShootFromPickUp;
+
+    //private GunBase gun;
+
+    //hacer con eventos
 
     void Start()
     {
         plMov = GetComponent<CharacterMovement>();
         plLook = GetComponentInChildren<PlayerCamera>();
+        pickUp = GetComponent<PickUpWeapon>();
 
     }
 
@@ -25,6 +34,16 @@ public class InputManager : MonoBehaviour
     public void OnLook(InputValue inputValue)
     {
         plLook.LookLogic(inputValue);
+    }
+
+    public void OnFire()
+    {
+        ShootFromPickUp();
+    }
+
+    public void OnPickUp()
+    {
+       // plMov.Interact();
     }
 
 }
