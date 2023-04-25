@@ -36,7 +36,9 @@ public class GunBase : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
             Debug.Log("here");
+            ITakeDamage isHit = hit.collider.GetComponent<ITakeDamage>();
 
+            isHit.TakeDamage();
         }
     }
 }
