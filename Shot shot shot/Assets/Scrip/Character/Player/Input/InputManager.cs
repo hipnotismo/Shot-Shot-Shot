@@ -7,10 +7,10 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class InputManager : MonoBehaviour
 {
-    [Header("References")]
-    private CharacterMovement plMov;
-    private PlayerCamera plLook;
-    private PickUpWeapon pickUp;
+    //[Header("References")]
+    //private CharacterMovement plMov;
+    //private PlayerCamera plLook;
+    //private PickUpWeapon pickUp;
 
     public delegate void ShotAction();
     public static event ShotAction ShootFromPickUp;
@@ -27,10 +27,9 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
-       // plMov = GetComponent<CharacterMovement>();
+        // plMov = GetComponent<CharacterMovement>();
         //plLook = GetComponentInChildren<PlayerCamera>();
         //pickUp = GetComponent<PickUpWeapon>();
-
     }
 
     public void OnMove(InputValue context)//InputValue context

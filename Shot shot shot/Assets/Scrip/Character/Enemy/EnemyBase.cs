@@ -30,4 +30,16 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
         isHit.TakeDamage();
 
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("here");
+            ITakeDamage isHit = collision.gameObject.GetComponent<ITakeDamage>();
+            Debug.Log(isHit);
+
+            isHit.TakeDamage();
+        }
+
+    }
 }
