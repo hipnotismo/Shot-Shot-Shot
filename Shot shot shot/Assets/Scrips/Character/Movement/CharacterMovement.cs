@@ -25,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
     {
         rigidBody ??= GetComponent<Rigidbody>();
         _target = GetComponent <Transform>();
+        InputManager.MovePlayer += Movement;
     }
 
     void Start()
@@ -63,9 +64,17 @@ public class CharacterMovement : MonoBehaviour
     /// <summary>
     /// moves the character by walking
     /// </summary>
-    public void Movement(InputValue context)
+    /// 
+    //public void Movement(InputValue context)//cambiar a recibir vec2
+    //{
+    //    var movementInput = context.Get<Vector2>();
+
+    //    _currentMovement = new Vector3(movementInput.x, 0, movementInput.y);
+    //}
+    public void Movement(Vector2 direction)//cambiar a recibir vec2
     {
-        var movementInput = context.Get<Vector2>();
+        var movementInput = direction;
+
         _currentMovement = new Vector3(movementInput.x, 0, movementInput.y);
     }
 

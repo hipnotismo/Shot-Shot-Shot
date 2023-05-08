@@ -18,10 +18,15 @@ public class PlayerCamera : MonoBehaviour
     private Vector2 mouseRot;
 
     private float xRotation;
-    
+
+    private void OnValidate()
+    {
+        InputManager.MoveCamera += LookLogic;
+    }
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -37,9 +42,10 @@ public class PlayerCamera : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
-    public void LookLogic(InputValue inputValue)
+    public void LookLogic(Vector2 inputValue)
     {
-        mouseRot = inputValue.Get<Vector2>();
+        // mouseRot = inputValue.Get<Vector2>();
+        mouseRot = inputValue;
     }
 
     

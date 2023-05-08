@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 public class EnemyBase : MonoBehaviour, ITakeDamage
 {
@@ -19,5 +20,14 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
     public void TakeDamage()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("here");
+        Debug.Log(other.transform.name);
+        ITakeDamage isHit = other.GetComponent<ITakeDamage>();
+        isHit.TakeDamage();
+
     }
 }
