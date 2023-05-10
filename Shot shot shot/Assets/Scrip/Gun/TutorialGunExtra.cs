@@ -7,6 +7,8 @@ public class TutorialGunExtra : MonoBehaviour
     private int count = 0;
     [SerializeField] GameObject TutorialPromp;
 
+    public delegate void TriggerWall();
+    public static event TriggerWall Trigger;
     void Start()
     {
         
