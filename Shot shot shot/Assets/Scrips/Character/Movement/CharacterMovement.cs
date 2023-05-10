@@ -28,6 +28,10 @@ public class CharacterMovement : MonoBehaviour
         InputManager.MovePlayer += Movement;
     }
 
+    private void OnDisable()
+    {
+        InputManager.MovePlayer -= Movement;
+    }
     void Start()
     {
         if (!rigidBody)

@@ -21,6 +21,14 @@ public class InputManager : MonoBehaviour
     public delegate void CameraMoveAction(Vector2 dir);
     public static event CameraMoveAction MoveCamera;
 
+    public delegate void PauseAction();
+    public static event PauseAction Pause;
+
+    public delegate void ResumeAction();
+    public static event ResumeAction Resume;
+
+    private bool IsPause = false;
+
     //private GunBase gun;
 
     //hacer con eventos
@@ -41,6 +49,8 @@ public class InputManager : MonoBehaviour
 
     public void OnLook(InputValue inputValue)
     {
+        Debug.Log("we look");
+
         var cameraInput = inputValue.Get<Vector2>();
         MoveCamera(cameraInput);
        // plLook.LookLogic(inputValue);
@@ -48,12 +58,33 @@ public class InputManager : MonoBehaviour
 
     public void OnFire()
     {
+        Debug.Log("we shoot");
+
         ShootFromPickUp();
     }
 
     public void OnPickUp()
     {
-       // plMov.Interact();
+        Debug.Log("we pick up");
+
+        // plMov.Interact();
     }
 
+    public void OnPause()
+    {
+        if (IsPause == false)
+        {
+
+            Pause();
+            IsPause = true;
+        }
+        else
+        {
+            Debug.Log("we pause");
+
+            Resume();
+            IsPause = false;
+
+        }
+    }
 }
