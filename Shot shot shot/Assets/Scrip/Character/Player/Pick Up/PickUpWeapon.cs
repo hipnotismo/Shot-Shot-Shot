@@ -51,8 +51,11 @@ public class PickUpWeapon : MonoBehaviour
         gun.transform.SetParent(WeaponPoint);
     }
 
+
     void Shoot()
     {
+        Debug.Log("We shoot");
+
         if (gun)
         {
             gun.Shoot();
@@ -61,7 +64,7 @@ public class PickUpWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Colides");
+        Debug.Log(other);
 
         if (Input.GetKey(KeyCode.E))
         {
@@ -69,6 +72,8 @@ public class PickUpWeapon : MonoBehaviour
             {
                 Equip(gun);
             }
+
+           
         }
 
         //if (other.gameObject.tag == "Gun")

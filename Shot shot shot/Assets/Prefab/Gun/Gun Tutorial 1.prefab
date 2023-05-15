@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 4531475630810870725}
   - component: {fileID: 3274294944938105425}
   - component: {fileID: 8393322547223768268}
-  m_Layer: 6
-  m_Name: Gun
+  - component: {fileID: 3471730839125304829}
+  m_Layer: 0
+  m_Name: Gun Tutorial 1
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7014801754304914066
 MeshFilter:
@@ -171,6 +172,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 10
-  mode: 0
-  bullet: {fileID: 0}
   cam: {fileID: 0}
+--- !u!114 &3471730839125304829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547490993807836558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: babaeb06db8ff9045ba60d1374e3f0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialPromp: {fileID: 0}

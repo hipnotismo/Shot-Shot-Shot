@@ -56,7 +56,7 @@ public class InputManager : MonoBehaviour
        // plLook.LookLogic(inputValue);
     }
 
-    public void OnFire()
+    public void OnFires()
     {
         Debug.Log("we shoot");
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8784395177990493368}
   - component: {fileID: 6158212352980417441}
   - component: {fileID: 4263723287730545637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8339113059186897631}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 3014345024830518850}
   - component: {fileID: 9158595230632979062}
   - component: {fileID: 2657285977171984505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 4001681995960514748}
   - component: {fileID: 1047973264947101946}
   - component: {fileID: 2304204766019743255}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
