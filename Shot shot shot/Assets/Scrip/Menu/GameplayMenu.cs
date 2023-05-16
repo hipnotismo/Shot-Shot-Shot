@@ -20,7 +20,13 @@ public class GameplayMenu : MonoBehaviour
     }
     public void RetrunToMain()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
 
     }
 

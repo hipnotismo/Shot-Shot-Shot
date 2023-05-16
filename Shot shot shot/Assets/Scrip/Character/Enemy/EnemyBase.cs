@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.HID;
 
 public class EnemyBase : MonoBehaviour, ITakeDamage
 {
-    // Start is called before the first frame update
+    [SerializeField] OpenDoor OptionalDoor;
     void Start()
     {
         
@@ -19,6 +19,11 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
 
     public void TakeDamage()
     {
+        if (OptionalDoor != null)
+        {
+            OptionalDoor.OpDoor();
+
+        }
         Destroy(gameObject);
     }
 

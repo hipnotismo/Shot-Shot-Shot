@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3274294944938105425}
   - component: {fileID: 8393322547223768268}
   - component: {fileID: 3471730839125304829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun Tutorial
   m_TagString: Gun
   m_Icon: {fileID: 0}
@@ -172,6 +172,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 10
+  mode: 0
+  bullet: {fileID: 0}
+  gunpoint: {fileID: 0}
   cam: {fileID: 0}
 --- !u!114 &3471730839125304829
 MonoBehaviour:
