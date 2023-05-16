@@ -18,6 +18,9 @@ public class InputManager : MonoBehaviour
     public delegate void PickAction();
     public static event PickAction PickUp;
 
+    public delegate void DropAtion();
+    public static event DropAtion Drop;
+
     public delegate void PlayerMoveAction(Vector2 dir);
     public static event PlayerMoveAction MovePlayer;
 
@@ -32,22 +35,15 @@ public class InputManager : MonoBehaviour
 
     private bool IsPause = false;
 
-    //private GunBase gun;
-
-    //hacer con eventos
-
     void Start()
     {
-        // plMov = GetComponent<CharacterMovement>();
-        //plLook = GetComponentInChildren<PlayerCamera>();
-        //pickUp = GetComponent<PickUpWeapon>();
+
     }
 
     public void OnMove(InputValue context)//InputValue context
     {
         var movementInput = context.Get<Vector2>();
         MovePlayer(movementInput);
-        //plMov.Movement(movementInput);
     }
 
     public void OnLook(InputValue inputValue)
@@ -55,7 +51,6 @@ public class InputManager : MonoBehaviour
 
         var cameraInput = inputValue.Get<Vector2>();
         MoveCamera(cameraInput);
-       // plLook.LookLogic(inputValue);
     }
 
     public void OnFires()
@@ -69,7 +64,12 @@ public class InputManager : MonoBehaviour
     {
         Debug.Log("we pick up");
         PickUp();
-        // plMov.Interact();
+    }
+
+    public void OnDrop()
+    {
+        Debug.Log("we drop");
+        Drop();
     }
 
     public void OnPause()

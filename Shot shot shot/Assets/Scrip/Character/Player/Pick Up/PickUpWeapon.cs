@@ -14,30 +14,35 @@ public class PickUpWeapon : MonoBehaviour
     {
         InputManager.ShootFromPickUp += Shoot;
         InputManager.PickUp += Equip;
+        InputManager.Drop += Drop;           
     }
 
     private void OnDisable()
     {
         InputManager.ShootFromPickUp -= Shoot;
         InputManager.PickUp -= Equip;
+        InputManager.Drop -= Drop;
     }
-    // Update is called once per frame
+
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.F))
-        {
-            Drop();
-        }
+        //if (Input.GetKey(KeyCode.F))
+        //{
+        //    Drop();
+        //}
     }
 
     void Drop()
     {
-        WeaponPoint.DetachChildren();
-        gun.transform.eulerAngles = new Vector3(gun.transform.position.x, gun.transform.position.z, gun.transform.position.y);
-        gun.GetComponent<Rigidbody>().isKinematic = false;
-        gun.GetComponent<MeshCollider>().enabled = true;
-        gun = null;
+        if (gun != null)
+        {
+            WeaponPoint.DetachChildren();
+            gun.transform.eulerAngles = new Vector3(gun.transform.position.x, gun.transform.position.z, gun.transform.position.y);
+            gun.GetComponent<Rigidbody>().isKinematic = false;
+            gun.GetComponent<MeshCollider>().enabled = true;
+            gun = null;
+        }      
 
     }
 
