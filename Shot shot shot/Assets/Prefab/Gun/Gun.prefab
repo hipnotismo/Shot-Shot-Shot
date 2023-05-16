@@ -172,5 +172,6 @@ MonoBehaviour:
   damage: 10
   range: 10
   mode: 0
-  bullet: {fileID: 0}
+  bullet: {fileID: 4144341709364328123, guid: cad52628ed588e34e907f7a420e91250, type: 3}
+  gunpoint: {fileID: 0}
   cam: {fileID: 0}

@@ -1519,6 +1519,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2714100709981478033, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
+      propertyPath: lifebar
+      value: 
+      objectReference: {fileID: 2104095189}
+    - target: {fileID: 2714100709981478033, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
+      propertyPath: GameOverFace
+      value: 
+      objectReference: {fileID: 346471347}
     - target: {fileID: 7590738671872761711, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1531,13 +1539,7 @@ PrefabInstance:
     - {fileID: 2657285977171984505, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7590738671872761711, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1494779579}
-    - targetCorrespondingSourceObject: {fileID: 7590738671872761711, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1494779581}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
 --- !u!1 &384641206
 GameObject:
@@ -5405,38 +5407,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419306038}
   m_CullTransparentMesh: 1
---- !u!1 &1494779570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7590738671872761711, guid: 94d5ddf2827f1c14eb0931c6a7706de9, type: 3}
-  m_PrefabInstance: {fileID: 380033350}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1494779579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494779570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc846484c390f4f43a00bb02f89f9a9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1494779581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494779570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564db6926d0cc8048b2d4c015bfd84dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 1
-  lifebar: {fileID: 2104095189}
-  GameOverFace: {fileID: 346471347}
 --- !u!1 &1532679107
 GameObject:
   m_ObjectHideFlags: 0

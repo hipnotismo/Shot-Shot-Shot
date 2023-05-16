@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
 
 public class EnemyBase : MonoBehaviour, ITakeDamage
 {
     [SerializeField] OpenDoor OptionalDoor;
+    [SerializeField] DestroyObject DestroyObject;
+
     void Start()
     {
         
@@ -23,6 +26,11 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
         {
             OptionalDoor.OpDoor();
 
+        }
+
+        if (DestroyObject!=null)
+        {
+            DestroyObject.destroyObject();
         }
         Destroy(gameObject);
     }

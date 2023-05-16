@@ -140,6 +140,8 @@ GameObject:
   - component: {fileID: 9164595911267588544}
   - component: {fileID: 3014345024830518850}
   - component: {fileID: 9158595230632979062}
+  - component: {fileID: 7615525038477259324}
+  - component: {fileID: 2714100709981478033}
   - component: {fileID: 2657285977171984505}
   m_Layer: 7
   m_Name: Player
@@ -310,6 +312,33 @@ MonoBehaviour:
   WeaponPoint: {fileID: 8339113059186897631}
   gun: {fileID: 0}
   gun2: {fileID: 0}
+--- !u!114 &7615525038477259324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590738671872761711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc846484c390f4f43a00bb02f89f9a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2714100709981478033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590738671872761711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564db6926d0cc8048b2d4c015bfd84dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 1
+  lifebar: {fileID: 0}
+  GameOverFace: {fileID: 0}
 --- !u!114 &2657285977171984505
 MonoBehaviour:
   m_ObjectHideFlags: 0
