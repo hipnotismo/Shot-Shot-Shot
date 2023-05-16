@@ -8,15 +8,18 @@ public class PickUpWeapon : MonoBehaviour
     [SerializeField] GunBase gun;
     [SerializeField] GunBase gun2;
 
+    private List<GunBase> guns = new List<GunBase>();
 
     private void OnEnable()
     {
         InputManager.ShootFromPickUp += Shoot;
+        InputManager.PickUp += Equip;
     }
 
     private void OnDisable()
     {
         InputManager.ShootFromPickUp -= Shoot;
+        InputManager.PickUp -= Equip;
     }
     // Update is called once per frame
     void Update()
@@ -39,16 +42,24 @@ public class PickUpWeapon : MonoBehaviour
     }
 
 
-    void Equip(GunBase temp)
+    void Equip()
     {
-        gun = temp;
-        gun.GetComponent<Rigidbody>().isKinematic = true;
+        Debug.Log("we are in equip");
 
-        gun.transform.position = WeaponPoint.transform.position;
-        gun.transform.rotation = WeaponPoint.transform.rotation;
+        if (gun == null)
+        {
+            Debug.Log("weapon empty");
 
-        gun.GetComponent<MeshCollider>().enabled = false;
-        gun.transform.SetParent(WeaponPoint);
+            gun = gun2;
+            gun.GetComponent<Rigidbody>().isKinematic = true;
+
+            gun.transform.position = WeaponPoint.transform.position;
+            gun.transform.rotation = WeaponPoint.transform.rotation;
+
+            gun.GetComponent<MeshCollider>().enabled = false;
+            gun.transform.SetParent(WeaponPoint);
+        }
+       
     }
 
 
@@ -64,17 +75,21 @@ public class PickUpWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         Debug.Log(other);
 
-        if (Input.GetKey(KeyCode.E))
-        {
+        //if (Input.GetKey(KeyCode.E))
+        //{
             if (other.TryGetComponent<GunBase>(out var gun))
             {
-                Equip(gun);
+
+            //guns.Add(gun);
+            //Equip(gun);
+            gun2 = gun;
             }
 
            
-        }
+        //}
 
         //if (other.gameObject.tag == "Gun")
         //{
@@ -89,5 +104,14 @@ public class PickUpWeapon : MonoBehaviour
         //}
     }
 
-     
+    private void OnTriggerExit(Collider other)
+    {
+        //guns.Remove(gun);
+        if (gun2 !=null)
+        {
+            gun2 = null;
+        }
+    }
+
+
 }

@@ -24,10 +24,15 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("here");
-        Debug.Log(other.transform.name);
-        ITakeDamage isHit = other.GetComponent<ITakeDamage>();
-        isHit.TakeDamage();
+        //Debug.Log("here");
+        //Debug.Log(other.transform.name);
+        //ITakeDamage isHit = other.GetComponent<ITakeDamage>();
+        //isHit.TakeDamage();
+
+        if (other.tag == "bullet")
+        {
+            TakeDamage();
+        }
 
     }
     void OnCollisionEnter(Collision collision)

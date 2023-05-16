@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class MainMenu : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject LevelSelect;
     public GameObject loadingInterface;
     public Image loadingProgressBar;
     //List of the scenes to load from Main Menu
@@ -36,6 +37,21 @@ public class MainMenu : MonoBehaviour
     public void HideMenu()
     {
         menu.SetActive(false);
+    }
+
+    public void ShowMenu()
+    {
+        menu.SetActive(true);
+    }
+
+    public void ShowLevelSelect()
+    {
+        LevelSelect.SetActive(true);
+    }
+
+    public void HideLevelSelect()
+    {
+        LevelSelect.SetActive(false);
     }
 
     public void ShowLoadingScreen()

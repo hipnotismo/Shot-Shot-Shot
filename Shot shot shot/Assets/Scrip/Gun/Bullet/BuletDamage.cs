@@ -24,6 +24,8 @@ public class BuletDamage : MonoBehaviour, ITakeDamage
         isHit.TakeDamage();
 
     }
+
+
     public void TakeDamage()
     {
     }

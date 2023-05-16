@@ -15,6 +15,9 @@ public class InputManager : MonoBehaviour
     public delegate void ShotAction();
     public static event ShotAction ShootFromPickUp;
 
+    public delegate void PickAction();
+    public static event PickAction PickUp;
+
     public delegate void PlayerMoveAction(Vector2 dir);
     public static event PlayerMoveAction MovePlayer;
 
@@ -49,7 +52,6 @@ public class InputManager : MonoBehaviour
 
     public void OnLook(InputValue inputValue)
     {
-        Debug.Log("we look");
 
         var cameraInput = inputValue.Get<Vector2>();
         MoveCamera(cameraInput);
@@ -66,7 +68,7 @@ public class InputManager : MonoBehaviour
     public void OnPickUp()
     {
         Debug.Log("we pick up");
-
+        PickUp();
         // plMov.Interact();
     }
 
