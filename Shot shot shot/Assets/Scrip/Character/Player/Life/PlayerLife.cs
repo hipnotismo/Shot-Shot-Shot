@@ -1,26 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] int life;
+    [SerializeField] float life;
+    [SerializeField] Image lifebar;
+    [SerializeField] GameObject GameOverFace;
+
+    private float MaxLifeReference;
     private bool inmune = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        MaxLifeReference = life;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(life / MaxLifeReference);
+
+        lifebar.fillAmount = life/ MaxLifeReference;
+        if (life == 0)
+        {
+            GamerOver();
+        }
+    }
+
+    private void GamerOver()
+    {
+        Time.timeScale = 0;
+        GameOverFace.SetActive(true);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Colides");
+        Debug.Log("Life trigger colider");
 
         if (other.tag == "Enemy")
         {
