@@ -32,7 +32,11 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
         {
             DestroyObject.destroyObject();
         }
-        Destroy(gameObject);
+        if (gameObject.tag != "boss")
+        {
+            Destroy(gameObject);
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)

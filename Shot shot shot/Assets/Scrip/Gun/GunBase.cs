@@ -59,7 +59,6 @@ public class GunBase : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 destination = hit.point;
-                Debug.Log(destination);
                 CreateBullet();
 
             }
