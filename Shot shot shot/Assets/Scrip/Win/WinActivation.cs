@@ -18,7 +18,11 @@ public class WinActivation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Time.timeScale = 0;
-        win.SetActive(true);
+        if (other.tag == "Player")
+        {
+            Time.timeScale = 0;
+            win.SetActive(true);
+        }
+      
     }
 }

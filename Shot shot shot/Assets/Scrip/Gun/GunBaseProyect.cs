@@ -6,8 +6,8 @@ using UnityEngine;
 public class GunBaseProyect : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float damage = 10;
-    [SerializeField] float range = 10;
+    //[SerializeField] private float damage = 10;
+    //[SerializeField] float range = 10;
     [SerializeField] GameObject bullet;
 
     [SerializeField] Camera cam;

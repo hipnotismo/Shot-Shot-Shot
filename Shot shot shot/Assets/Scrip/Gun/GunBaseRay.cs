@@ -11,8 +11,6 @@ public class GunBaseRay :  GunBase
 
     //[SerializeField] Camera cam;
 
-    private Vector3 destination;
-
     void Start()
     {
         this.GetComponent<Rigidbody>().isKinematic = true;
