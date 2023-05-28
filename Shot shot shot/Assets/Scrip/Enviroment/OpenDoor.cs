@@ -28,7 +28,6 @@ public class OpenDoor : MonoBehaviour
 
     public void OpDoor()
     {
-        Debug.Log(" door will open");
 
         float step = speed * Time.deltaTime;
 

@@ -21,7 +21,6 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(life / MaxLifeReference);
 
         lifebar.fillAmount = life/ MaxLifeReference;
         if (life == 0)

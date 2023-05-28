@@ -55,20 +55,17 @@ public class InputManager : MonoBehaviour
 
     public void OnFires()
     {
-        Debug.Log("we shoot");
-
+        Debug.Log("We are in OnFire");
         ShootFromPickUp();
     }
 
     public void OnPickUp()
     {
-        Debug.Log("we pick up");
         PickUp();
     }
 
     public void OnDrop()
     {
-        Debug.Log("we drop");
         Drop();
     }
 
@@ -82,7 +79,6 @@ public class InputManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("we pause");
 
             Resume();
             IsPause = false;

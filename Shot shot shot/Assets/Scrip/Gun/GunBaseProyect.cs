@@ -3,14 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBaseProyect : MonoBehaviour
-{
-    [Header("Stats")]
-    //[SerializeField] private float damage = 10;
-    //[SerializeField] float range = 10;
+public class GunBaseProyect : GunBase
+{    
     [SerializeField] GameObject bullet;
-
-    [SerializeField] Camera cam;
 
     private Vector3 destination;
 
@@ -20,18 +15,13 @@ public class GunBaseProyect : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-        //    Shoot();
-        //}
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.green);
 
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
         Debug.Log("Shooting instances");
 
@@ -42,25 +32,21 @@ public class GunBaseProyect : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             destination = hit.point;
-            Debug.Log(destination);
-            
+            CreateBullet();
+
         }
         else
         {
             destination = ray.GetPoint(1000);
-        }
-        //if (Physics.Raycast(cam.transform.position,cam.transform.forward,out hit, range))
-        //{
-        //    Debug.Log(hit.transform.name);
-        //    Debug.Log("here");
-        //    ITakeDamage isHit = hit.collider.GetComponent<ITakeDamage>();
+            CreateBullet();
 
-        //    isHit.TakeDamage();
-        //}
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void CreateBullet()
     {
-        Debug.Log("gunnnnnnn");
+        GameObject proyectile = Instantiate(bullet, cam.transform.position, Quaternion.identity);
+        Destroy(proyectile, 1f);
+        proyectile.GetComponent<Rigidbody>().AddForce((destination - proyectile.transform.position).normalized * 50.0f, ForceMode.Impulse);
     }
 }

@@ -58,7 +58,6 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
         {
             Debug.Log("here");
             ITakeDamage isHit = collision.gameObject.GetComponent<ITakeDamage>();
-            Debug.Log(isHit);
 
             isHit.TakeDamage();
         }

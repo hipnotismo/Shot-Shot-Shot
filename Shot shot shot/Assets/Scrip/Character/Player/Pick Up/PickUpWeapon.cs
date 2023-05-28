@@ -49,11 +49,9 @@ public class PickUpWeapon : MonoBehaviour
 
     void Equip()
     {
-        Debug.Log("we are in equip");
 
-        if (gun == null)
+        if (gun == null && gun2 != null)  
         {
-            Debug.Log("weapon empty");
 
             gun = gun2;
             gun.GetComponent<Rigidbody>().isKinematic = true;
@@ -70,10 +68,11 @@ public class PickUpWeapon : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("We shoot");
-
+        Debug.Log("We are in Shoot");
         if (gun)
         {
+            Debug.Log("There is a weapon yes");
+
             gun.Shoot();
         }
     }
@@ -81,37 +80,18 @@ public class PickUpWeapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log(other);
-
-        //if (Input.GetKey(KeyCode.E))
-        //{
             if (other.TryGetComponent<GunBase>(out var gun))
             {
 
-            //guns.Add(gun);
-            //Equip(gun);
+           
             gun2 = gun;
             }
 
-           
-        //}
-
-        //if (other.gameObject.tag == "Gun")
-        //{
-        //    Debug.Log("is Gun");
-
-        //    if (Input.GetKey(KeyCode.E))
-        //    {
-        //        Debug.Log("here");
-
-        //        Equip(other.gameObject);
-        //    }
-        //}
+     
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //guns.Remove(gun);
         if (gun2 !=null)
         {
             gun2 = null;

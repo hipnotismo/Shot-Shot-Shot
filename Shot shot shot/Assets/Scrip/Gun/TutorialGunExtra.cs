@@ -24,7 +24,6 @@ public class TutorialGunExtra : MonoBehaviour
     {
         if (count == 0)
         {
-            Debug.Log("we trigger");
             TutorialPromp.SetActive(true);
             Time.timeScale = 0;
             count++;
