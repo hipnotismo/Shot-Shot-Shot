@@ -38,13 +38,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Life trigger colider");
-
-        if (other.tag == "Enemy")
-        {
-            Debug.Log("Colides with enemy");
-
-        }
+      
     }
 
     public void TakeDamage() 

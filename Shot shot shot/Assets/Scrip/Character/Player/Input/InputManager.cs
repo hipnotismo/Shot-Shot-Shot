@@ -55,7 +55,6 @@ public class InputManager : MonoBehaviour
 
     public void OnFires()
     {
-        Debug.Log("We are in OnFire");
         ShootFromPickUp();
     }
 

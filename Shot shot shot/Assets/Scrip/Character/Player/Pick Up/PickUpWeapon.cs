@@ -14,7 +14,7 @@ public class PickUpWeapon : MonoBehaviour
     {
         InputManager.ShootFromPickUp += Shoot;
         InputManager.PickUp += Equip;
-        InputManager.Drop += Drop;           
+        InputManager.Drop += Drop;
     }
 
     private void OnDisable()
@@ -27,10 +27,7 @@ public class PickUpWeapon : MonoBehaviour
     void Update()
     {
 
-        //if (Input.GetKey(KeyCode.F))
-        //{
-        //    Drop();
-        //}
+       
     }
 
     void Drop()
@@ -42,7 +39,7 @@ public class PickUpWeapon : MonoBehaviour
             gun.GetComponent<Rigidbody>().isKinematic = false;
             gun.GetComponent<MeshCollider>().enabled = true;
             gun = null;
-        }      
+        }
 
     }
 
@@ -50,7 +47,7 @@ public class PickUpWeapon : MonoBehaviour
     void Equip()
     {
 
-        if (gun == null && gun2 != null)  
+        if (gun == null && gun2 != null)
         {
 
             gun = gun2;
@@ -61,18 +58,23 @@ public class PickUpWeapon : MonoBehaviour
 
             gun.GetComponent<MeshCollider>().enabled = false;
             gun.transform.SetParent(WeaponPoint);
+            int WeaponLayer = LayerMask.NameToLayer("weapon");
+
+            gun.gameObject.layer = WeaponLayer;
+
+            foreach (Transform child in gun.transform)
+            {
+                child.gameObject.layer = WeaponLayer;
+            }
         }
-       
+
     }
 
 
     void Shoot()
     {
-        Debug.Log("We are in Shoot");
         if (gun)
         {
-            Debug.Log("There is a weapon yes");
-
             gun.Shoot();
         }
     }
@@ -80,19 +82,19 @@ public class PickUpWeapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-            if (other.TryGetComponent<GunBase>(out var gun))
-            {
+        if (other.TryGetComponent<GunBase>(out var gun))
+        {
 
-           
+
             gun2 = gun;
-            }
+        }
 
-     
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (gun2 !=null)
+        if (gun2 != null)
         {
             gun2 = null;
         }

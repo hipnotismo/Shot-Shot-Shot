@@ -10,6 +10,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private Transform playerBody;
 
     [SerializeField] private Transform camHolder;
+    [SerializeField] private Transform camWeaponLayer;
 
     [Header("Movement")]
 
@@ -39,6 +40,8 @@ public class PlayerCamera : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -70f, 70f);
 
         camHolder.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        camWeaponLayer.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
