@@ -18,11 +18,30 @@ public class WinActivation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
+
+        Debug.Log(other.tag);
+
         if (other.tag == "Player")
         {
+            Debug.Log("Player is wining");
             Time.timeScale = 0;
             win.SetActive(true);
         }
       
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision);
+
+        Debug.Log(collision.gameObject.tag);
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player is wining");
+            Time.timeScale = 0;
+            win.SetActive(true);
+        }
     }
 }
