@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; //important
+using UnityEngine.AI; 
 
-//if you use this code you are contractually obligated to like the YT video
-public class RandomMovement : MonoBehaviour //don't forget to change the script name if you haven't
+public class RandomMovement : MonoBehaviour 
 {
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] float range; //radius of sphere
+    [SerializeField] float range; 
 
     [SerializeField] Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
