@@ -30,9 +30,11 @@ public class RandomMovement : MonoBehaviour
         }
 
     }
+    //TODO: TP2 - Syntax - Consistency in naming convention
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
 
+        //TODO: Is this copied-pasted code??
         Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html

@@ -21,10 +21,12 @@ public class GameplayMenu : MonoBehaviour
     public void RetrunToMain()
     {
         Time.timeScale = 1;
+        //TODO: Fix - Hardcoded value
         SceneManager.LoadScene("MainMenu");
 
     }
 
+    //TODO: Documentation - Add summary
     public void Retry()
     {
         Time.timeScale = 1;

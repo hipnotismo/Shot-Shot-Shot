@@ -11,8 +11,10 @@ public class Trigermanagertutorial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //TODO: Fix - Hardcoded value
         if (other.tag == "Player")
         {
+            //TODO: TP2 - Remove unused methods/variables
             //OpenDoor();
             door.OpDoor();
 

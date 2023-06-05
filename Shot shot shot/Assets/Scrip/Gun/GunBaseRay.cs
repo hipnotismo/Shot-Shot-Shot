@@ -45,6 +45,7 @@ public class GunBaseRay : GunBase
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+            //TODO: Fix - Bad log/Log out of context
             Debug.Log("here");
             ITakeDamage isHit = hit.collider.GetComponent<ITakeDamage>();
             TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
@@ -58,6 +59,7 @@ public class GunBaseRay : GunBase
         }
         else
         {
+            //TODO: TP2 - SOLID
             TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
 
             StartCoroutine(SpawnTrail(trail, BulletSpawnPoint.position + cam.transform.forward * 100, Vector3.zero, false));
@@ -70,9 +72,11 @@ public class GunBaseRay : GunBase
 
     private void OnTriggerEnter(Collider other)
     {
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("gunnnnnnn");
     }
 
+    //TODO: TP2 - SOLID
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact)
     {
         // This has been updated from the video implementation to fix a commonly raised issue about the bullet trails

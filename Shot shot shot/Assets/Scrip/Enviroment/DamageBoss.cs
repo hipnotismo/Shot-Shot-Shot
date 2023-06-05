@@ -6,6 +6,7 @@ public class DamageBoss : MonoBehaviour, ITakeDamage
 {
     [SerializeField] BossHealth boss;
 
+    //TODO: TP2 - Remove unused methods/variables
     void Start()
     {
         
@@ -30,6 +31,7 @@ public class DamageBoss : MonoBehaviour, ITakeDamage
     {
        
 
+        //TODO: Fix - Hardcoded value
         if (other.tag == "bullet")
         {
             TakeDamage();

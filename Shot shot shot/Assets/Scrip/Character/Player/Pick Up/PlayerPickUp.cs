@@ -16,6 +16,7 @@ public class PlayerPickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //TODO: Fix - Old input manager
         if (Input.GetKey(KeyCode.F))
         {
             Drop();
@@ -43,14 +44,19 @@ public class PlayerPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("Colides");
 
+        //TODO: Fix - Hardcoded value
         if (other.gameObject.tag == "Player")
         {
+            //TODO: Fix - Bad log/Log out of context
             Debug.Log("is player");
 
+            //TODO: Fix - Old input manager
             if (Input.GetKey(KeyCode.E))
             {
+                //TODO: Fix - Bad log/Log out of context
                 Debug.Log("here");
 
                 Equip();

@@ -7,11 +7,13 @@ using UnityEngine.LowLevel;
 
 public class InputManager : MonoBehaviour
 {
+    //TODO: TP2 - Remove unused methods/variables
     //[Header("References")]
     //private CharacterMovement plMov;
     //private PlayerCamera plLook;
     //private PickUpWeapon pickUp;
 
+    //TODO: Documentation - Add summary
     public delegate void ShotAction();
     public static event ShotAction ShootFromPickUp;
 
@@ -35,6 +37,7 @@ public class InputManager : MonoBehaviour
 
     private bool IsPause = false;
 
+    //TODO: TP2 - Remove unused methods/variables
     void Start()
     {
 

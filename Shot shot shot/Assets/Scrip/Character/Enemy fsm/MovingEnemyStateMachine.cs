@@ -19,11 +19,13 @@ public class MovingEnemyStateMachine : MonoBehaviour
 
     public float arrivalThreshold = 2f;
 
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     private void OnEnable()
     {
         currentState = goalState;
     }
 
+    //TODO: TP2 - Remove unused methods/variables
     void Start()
     {
         

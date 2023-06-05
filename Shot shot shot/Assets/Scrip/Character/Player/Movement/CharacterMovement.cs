@@ -18,6 +18,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector3 _currentMovement;
 
+    //TODO: TP2 - Remove unused methods/variables
   //  public CinemachineVirtualCamera test;
     private Transform _target;
 
@@ -32,10 +33,12 @@ public class CharacterMovement : MonoBehaviour
     {
         InputManager.MovePlayer -= Movement;
     }
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     void Start()
     {
         if (!rigidBody)
         {
+            //TODO: Fix - Code is in Spanish or is trash code
             //<color=xxx> nos permite colorear una string
             //mas data sobre las string con $ (string interpolation):
             //https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/tokens/interpolated
@@ -69,6 +72,7 @@ public class CharacterMovement : MonoBehaviour
     /// moves the character by walking
     /// </summary>
     /// 
+    //TODO: TP2 - Remove unused methods/variables
     //public void Movement(InputValue context)//cambiar a recibir vec2
     //{
     //    var movementInput = context.Get<Vector2>();
@@ -82,6 +86,7 @@ public class CharacterMovement : MonoBehaviour
         _currentMovement = new Vector3(movementInput.x, 0, movementInput.y);
     }
 
+    //TODO: TP2 - Syntax - Fix declaration order
     // Update is called once per frame
     void Update()
     {

@@ -26,6 +26,7 @@ public class OpenDoor : MonoBehaviour
         door = GetComponent<Transform>();
     }
 
+    //TODO: TP2 - Syntax - Consistency in naming convention
     public void OpDoor()
     {
 

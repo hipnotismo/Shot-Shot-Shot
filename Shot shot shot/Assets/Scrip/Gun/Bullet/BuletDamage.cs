@@ -5,6 +5,7 @@ using UnityEngine.InputSystem.HID;
 
 public class BuletDamage : MonoBehaviour, ITakeDamage
 {
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class BuletDamage : MonoBehaviour, ITakeDamage
     }
 
 
+    //TODO: TP2 - SOLID
     public void TakeDamage()
     {
     }

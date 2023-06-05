@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickUpWeapon : MonoBehaviour
 {
     [SerializeField] Transform WeaponPoint;
+    //TODO: Fix - Gun1, Gun2?
     [SerializeField] GunBase gun;
     [SerializeField] GunBase gun2;
 
@@ -24,12 +25,14 @@ public class PickUpWeapon : MonoBehaviour
         InputManager.Drop -= Drop;
     }
 
+    //TODO: TP2 - Remove unused methods/variables
     void Update()
     {
 
        
     }
 
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     void Drop()
     {
         if (gun != null)
@@ -44,6 +47,7 @@ public class PickUpWeapon : MonoBehaviour
     }
 
 
+    //TODO: Documentation - Add summary
     void Equip()
     {
 

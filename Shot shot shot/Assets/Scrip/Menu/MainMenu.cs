@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartLevel1()
     {
+        //TODO: Fix - Repeated code
         HideMenu();
         ShowLoadingScreen();
         //Load the Scene asynchronously in the background
@@ -36,6 +37,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartLevel2()
     {
+        //TODO: Fix - Repeated code
         HideMenu();
         ShowLoadingScreen();
         //Load the Scene asynchronously in the background
@@ -46,9 +48,11 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGameSO()
     {
+        //TODO: Fix - Repeated code
         HideMenu();
         ShowLoadingScreen();
         //Load the Scene asynchronously in the background
+        //TODO: TP2 - Remove unused methods/variables
         //scenesToLoad.Add(SceneManager.LoadSceneAsync("Gameplay"));
         //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
         //scenesToLoad.Add(SceneManager.LoadSceneAsync("Level01Part01", LoadSceneMode.Additive));
@@ -67,11 +71,13 @@ public class MainMenu : MonoBehaviour
 
     public void ShowLevelSelect()
     {
+        //TODO: Fix - Repeated code
         LevelSelect.SetActive(true);
     }
 
     public void HideLevelSelect()
     {
+        //TODO: Fix - Repeated code
         LevelSelect.SetActive(false);
     }
 
@@ -82,6 +88,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadingScreen()
     {
+        //TODO: Is this copied-pasted code??
         float totalProgress = 0;
         //Iterate through all the scenes to load
         for (int i = 0; i < scenesToLoad.Count; ++i)

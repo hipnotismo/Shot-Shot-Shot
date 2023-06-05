@@ -8,6 +8,7 @@ public class TutorialGunExtra : MonoBehaviour
     [SerializeField] GameObject TutorialPromp;
 
     public delegate void TriggerWall();
+    //TODO: TP2 - Remove unused methods/variables
     public static event TriggerWall Trigger;
     void Start()
     {
@@ -24,6 +25,7 @@ public class TutorialGunExtra : MonoBehaviour
     {
         if (count == 0)
         {
+            //TODO: TP2 - SOLID
             TutorialPromp.SetActive(true);
             Time.timeScale = 0;
             count++;
