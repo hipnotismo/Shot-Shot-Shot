@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class EnemyState : MonoBehaviour
 {
+   //TODO: Documentation - Add summary
    public abstract EnemyState RunCurrentState();
 }

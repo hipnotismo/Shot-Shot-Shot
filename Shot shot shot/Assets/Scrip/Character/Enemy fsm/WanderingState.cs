@@ -13,6 +13,7 @@ public class WanderingState : IEnemyState
 
         DoWander(enemy);
 
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("Inside wandering state");
         return this;
     }
@@ -30,6 +31,7 @@ public class WanderingState : IEnemyState
         }
     }
 
+    //TODO: Fix - Repeated code
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
         Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 

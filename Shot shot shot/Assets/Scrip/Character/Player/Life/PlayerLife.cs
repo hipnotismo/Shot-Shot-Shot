@@ -18,6 +18,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
        
     }
 
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +30,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
         }
     }
 
+    //TODO: TP2 - SOLID
     private void GamerOver()
     {
         Time.timeScale = 0;
@@ -36,6 +38,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
     }
 
+    //TODO: TP2 - Remove unused methods/variables
     private void OnTriggerEnter(Collider other)
     {
       
@@ -43,6 +46,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
     public void TakeDamage() 
     {
+        //TODO: TP2 - FSM
         if (inmune==false)
         {
             life--;
@@ -53,10 +57,12 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
     IEnumerator inmunity() 
     {
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("we enter");
         inmune = true;
         yield return new WaitForSeconds(3);
         inmune = false;
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("we leave");
     }
 }

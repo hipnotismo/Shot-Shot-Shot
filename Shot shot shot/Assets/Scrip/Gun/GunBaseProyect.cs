@@ -23,6 +23,7 @@ public class GunBaseProyect : GunBase
 
     public override void Shoot()
     {
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("Shooting instances");
 
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
@@ -46,7 +47,9 @@ public class GunBaseProyect : GunBase
     private void CreateBullet()
     {
         GameObject proyectile = Instantiate(bullet, cam.transform.position, Quaternion.identity);
+        //TODO: Fix - Hardcoded value
         Destroy(proyectile, 1f);
+        //TODO: Fix - Hardcoded value
         proyectile.GetComponent<Rigidbody>().AddForce((destination - proyectile.transform.position).normalized * 50.0f, ForceMode.Impulse);
     }
 }

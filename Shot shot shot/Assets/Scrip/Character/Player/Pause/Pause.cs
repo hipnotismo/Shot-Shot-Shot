@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: TP2 - Syntax - Consistency in naming convention
 public class Pause : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Pause : MonoBehaviour
         InputManager.Pause -= EnterPause;
         InputManager.Resume -= ExitPause;
     }
+    //TODO: TP2 - Remove unused methods/variables
     void Start()
     {
         
