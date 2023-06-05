@@ -1,30 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-//TODO - Documentation - Add summary
+/// <summary>
+/// Class to control the boss health
+/// </summary>
 public class BossHealth : MonoBehaviour
 {
-    private int healt = 3;
+    [SerializeField] int bossTotalHealth = 3;
     //TODO: TP2 - SOLID
     [SerializeField] GameObject win;
 
-    //TODO: TP2 - Remove unused methods/variables
-    void Start()
+    /// <summary>
+    /// Normally call from another class or method to reduce the bossTotalHealt and check if it less than zero to destroy the object and activate the win screen.
+    /// </summary>
+    public void LossBossHealth()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    //TODO: TP2 - Syntax - Consistency in naming convention (is LoseHealth)
-    public void LossLife()
-    {
-        healt--;
-        if (healt < 1)
+        bossTotalHealth--;
+        if (bossTotalHealth < 1)
         {
             Destroy(gameObject);
             Time.timeScale = 0;
