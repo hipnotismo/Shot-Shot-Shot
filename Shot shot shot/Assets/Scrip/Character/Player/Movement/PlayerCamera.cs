@@ -25,14 +25,6 @@ public class PlayerCamera : MonoBehaviour
         InputManager.MoveCamera += LookLogic;
     }
 
-    //TODO: TP2 - Remove unused methods/variables
-    void Start()
-    {
-       // Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
-    // Update is called once per frame
     void Update()
     {
         var mouseX = mouseRot.x * mouseSensitivity * Time.deltaTime;
@@ -50,8 +42,6 @@ public class PlayerCamera : MonoBehaviour
     //TODO: TP2 - Syntax - Consistency in naming convention
     public void LookLogic(Vector2 inputValue)
     {
-        //TODO: TP2 - Remove unused methods/variables
-        // mouseRot = inputValue.Get<Vector2>();
         mouseRot = inputValue;
     }
 

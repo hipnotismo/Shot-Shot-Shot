@@ -11,7 +11,7 @@ public class MovingEnemyStateMachine : MonoBehaviour
 
     public NavMeshAgent navAgent;
 
-   public float range;
+    public float range;
 
     public Transform centrePoint;
 
