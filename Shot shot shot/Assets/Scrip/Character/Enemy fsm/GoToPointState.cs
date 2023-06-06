@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,7 +13,7 @@ public class GoToPointState : IEnemyState
         if (GoToDoor(enemy))
         {
             //TODO: Fix - Bad log/Log out of context
-            Debug.Log("we return wandering");
+            Debug.Log("The state " + this.ToString() + " is changing to the wandering state");
             return enemy.wanderingState;
         }
 

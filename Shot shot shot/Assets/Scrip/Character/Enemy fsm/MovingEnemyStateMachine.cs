@@ -25,12 +25,6 @@ public class MovingEnemyStateMachine : MonoBehaviour
         currentState = goalState;
     }
 
-    //TODO: TP2 - Remove unused methods/variables
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         currentState = currentState.Behavior(this);
