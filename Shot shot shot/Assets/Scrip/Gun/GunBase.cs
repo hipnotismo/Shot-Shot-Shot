@@ -4,7 +4,7 @@ public class GunBase : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField] private float damage = 10;
-    //TODO: TP2 - Remove unused methods/variables
+
     public Transform gunpoint;
 
     public Camera cam;
@@ -23,9 +23,6 @@ public class GunBase : MonoBehaviour
 
     public virtual void Shoot()
     {
-        //TODO: Fix - Bad log/Log out of context
-        Debug.Log("We are in GunBase Shoot");
-
     }
 
 
