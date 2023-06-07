@@ -88,8 +88,6 @@ public class PickUpWeapon : MonoBehaviour
 
         if (other.TryGetComponent<GunBase>(out var gun))
         {
-
-
             gun2 = gun;
         }
 
