@@ -11,13 +11,13 @@ public class OpenDoor : MonoBehaviour
 
     private void OnEnable()
     {
-        Trigermanagertutorial.OpenDoor += OpDoor;
+        TrigerManagerTutorial.OpenDoor += OpDoor;
 
     }
 
     private void OnDisable()
     {
-        Trigermanagertutorial.OpenDoor -= OpDoor;
+        TrigerManagerTutorial.OpenDoor -= OpDoor;
 
     }
 
