@@ -10,11 +10,37 @@ public class Triggerinput : MonoBehaviour
     Dictionary<string, Action> Tag_dict =
                       new Dictionary<string, Action>();
 
+    Dictionary<string, object> Tag_dicts =
+                      new Dictionary<string, object>();
+
+    static Dictionary<string, Action<Dictionary<string, object>>> eventDictionary;
+
+    //new Dictionary<string, object> { { "amount", 1 } }
+
     //TODO: TP2 - Remove unused methods/variables
     private void OnValidate()
     {
-       // TutorialGunExtra.Trigger += EnterPause;
+        eventDictionary = new Dictionary<string, Action<Dictionary<string, object>>>();
 
+        // TutorialGunExtra.Trigger += EnterPause;
+
+    }
+
+
+    public static void StartListening(string eventName, Action<Dictionary<string, object>> listener)
+    {
+        Action<Dictionary<string, object>> thisEvent;
+
+        if (eventDictionary.TryGetValue(eventName, out thisEvent))
+        {
+            thisEvent += listener;
+            eventDictionary[eventName] = thisEvent;
+        }
+        else
+        {
+            thisEvent += listener;
+            eventDictionary.Add(eventName, thisEvent);
+        }
     }
 
     void Start()

@@ -9,6 +9,7 @@ public class TrigerManagerTutorial : MonoBehaviour
 
     [SerializeField] OpenDoor door;
 
+
     private void OnTriggerEnter(Collider other)
     {
         //TODO: Fix - Hardcoded value

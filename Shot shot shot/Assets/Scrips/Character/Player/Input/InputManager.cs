@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.LowLevel;
-//using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class InputManager : MonoBehaviour
 {
-    //TODO: TP2 - Remove unused methods/variables
-    //[Header("References")]
-    //private CharacterMovement plMov;
-    //private PlayerCamera plLook;
-    //private PickUpWeapon pickUp;
-
+   /// <summary>
+   /// 
+   /// </summary>
+   
     //TODO: Documentation - Add summary
     public delegate void ShotAction();
     public static event ShotAction ShootFromPickUp;
