@@ -12,50 +12,15 @@ public class MainMenu : MonoBehaviour
     public Image loadingProgressBar;
     //List of the scenes to load from Main Menu
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
-    public void StartGame()
+
+    public void LoadLevel(string SceneName)
     {
         HideMenu();
         ShowLoadingScreen();
         //Load the Scene asynchronously in the background
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("TutialLevel"));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync(SceneName));
         //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
        // scenesToLoad.Add(SceneManager.LoadSceneAsync("Level01Part01", LoadSceneMode.Additive));
-        StartCoroutine(LoadingScreen());
-    }
-
-    public void StartLevel1()
-    {
-        //TODO: Fix - Repeated code
-        HideMenu();
-        ShowLoadingScreen();
-        //Load the Scene asynchronously in the background
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1"));
-        //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
-        // scenesToLoad.Add(SceneManager.LoadSceneAsync("Level01Part01", LoadSceneMode.Additive));
-        StartCoroutine(LoadingScreen());
-    }
-
-    public void StartLevel2()
-    {
-        //TODO: Fix - Repeated code
-        HideMenu();
-        ShowLoadingScreen();
-        //Load the Scene asynchronously in the background
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Level2"));
-        //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
-        // scenesToLoad.Add(SceneManager.LoadSceneAsync("Level01Part01", LoadSceneMode.Additive));
-        StartCoroutine(LoadingScreen());
-    }
-    public void StartGameSO()
-    {
-        //TODO: Fix - Repeated code
-        HideMenu();
-        ShowLoadingScreen();
-        //Load the Scene asynchronously in the background
-        //TODO: TP2 - Remove unused methods/variables
-        //scenesToLoad.Add(SceneManager.LoadSceneAsync("Gameplay"));
-        //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
-        //scenesToLoad.Add(SceneManager.LoadSceneAsync("Level01Part01", LoadSceneMode.Additive));
         StartCoroutine(LoadingScreen());
     }
 
