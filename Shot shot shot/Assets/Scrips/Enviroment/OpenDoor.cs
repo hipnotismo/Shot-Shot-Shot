@@ -11,13 +11,15 @@ public class OpenDoor : MonoBehaviour
 
     private void OnEnable()
     {
-        TrigerManagerTutorial.OpenDoor += OpDoor;
+        //TrigerManagerTutorial.OpenDoor += OnOpenDoor;
+        EventManager.StartListening("DoorOne", OnOpenDoor);
 
     }
 
     private void OnDisable()
     {
-        TrigerManagerTutorial.OpenDoor -= OpDoor;
+       // TrigerManagerTutorial.OpenDoor -= OnOpenDoor;
+        EventManager.StopListening("DoorOne", OnOpenDoor);
 
     }
 
@@ -27,7 +29,7 @@ public class OpenDoor : MonoBehaviour
     }
 
     //TODO: TP2 - Syntax - Consistency in naming convention
-    public void OpDoor()
+    void OnOpenDoor(Dictionary<string, object> message)
     {
 
         float step = speed * Time.deltaTime;
