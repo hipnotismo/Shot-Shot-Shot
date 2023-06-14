@@ -795,6 +795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6182128069a03ca46ad0d70e897a1597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
+  tag: addCoin
+  Gun: {fileID: 7395836212817225250, guid: 86da29c44f2ca594992fcd731041cc3d, type: 3}
 --- !u!4 &1445739743
 Transform:
   m_ObjectHideFlags: 0
@@ -883,6 +886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07db2ca229e9474e8656b15aa707437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
+  tag: addCoin
 --- !u!4 &1829158659
 Transform:
   m_ObjectHideFlags: 0

@@ -25,13 +25,6 @@ public class PickUpWeapon : MonoBehaviour
         InputManager.Drop -= Drop;
     }
 
-    //TODO: TP2 - Remove unused methods/variables
-    void Update()
-    {
-
-       
-    }
-
     //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     void Drop()
     {
