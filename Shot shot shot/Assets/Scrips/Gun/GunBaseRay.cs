@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunBaseRay : GunBase
@@ -67,13 +65,6 @@ public class GunBaseRay : GunBase
 
         }
 
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //TODO: Fix - Bad log/Log out of context
-        Debug.Log("gunnnnnnn");
     }
 
     //TODO: TP2 - SOLID

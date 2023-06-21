@@ -20,19 +20,19 @@ public class CoinCounter : MonoBehaviour
 
     void OnAddCoins(Dictionary<string, object> message)
     {
-       //var amount = (int)message["amount"];
-        //coins += amount;
+       ////var amount = (int)message["amount"];
+       // //coins += amount;
 
-        Guns = (GunBase)message["amount"];
+       // Guns = (GunBase)message["amount"];
 
-        if (Guns == null)
-        {
-            Debug.Log(this.name + " Guns is null");
-        }
-        else
-        {
-            Debug.Log(this.name + " Guns is not null");
+       // if (Guns == null)
+       // {
+       //     Debug.Log(this.name + " Guns is null");
+       // }
+       // else
+       // {
+       //     Debug.Log(this.name + " Guns is not null");
 
-        }
+       // }
     }
 }

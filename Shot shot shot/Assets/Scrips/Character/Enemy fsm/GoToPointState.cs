@@ -12,8 +12,6 @@ public class GoToPointState : IEnemyState
         }
         if (GoToDoor(enemy))
         {
-            //TODO: Fix - Bad log/Log out of context
-            Debug.Log("The state " + this.ToString() + " is changing to the wandering state");
             return enemy.wanderingState;
         }
 

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class GunBase : MonoBehaviour
 {
-    [Header("Stats")]
-    [SerializeField] private float damage = 10;
-
     public Transform gunpoint;
 
     public Camera cam;
@@ -24,6 +21,5 @@ public class GunBase : MonoBehaviour
     public virtual void Shoot()
     {
     }
-
 
 }

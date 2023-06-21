@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObject/Event/EventManger")]
+[CreateAssetMenu(menuName = "ScriptableObjects/Event/EventManger")]
 public class EventMangerScriptable : ScriptableObject
 {
     public Dictionary<string, Action<Dictionary<string, object>>> eventDictionary 

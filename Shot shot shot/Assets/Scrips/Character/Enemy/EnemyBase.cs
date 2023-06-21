@@ -9,18 +9,6 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
     [SerializeField] OpenDoor OptionalDoor;
     [SerializeField] DestroyObject DestroyObject;
 
-    //TODO: TP2 - Remove unused methods/variables
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TakeDamage()
     {
         //TODO: TP2 - SOLID
