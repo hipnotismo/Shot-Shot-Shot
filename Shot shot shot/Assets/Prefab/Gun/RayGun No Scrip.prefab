@@ -14,10 +14,8 @@ GameObject:
   - component: {fileID: 6735899393929398128}
   - component: {fileID: 4531475630810870725}
   - component: {fileID: 3274294944938105425}
-  - component: {fileID: 7395836212817225250}
-  - component: {fileID: -6588709983893786949}
   m_Layer: 0
-  m_Name: RayGun
+  m_Name: RayGun No Scrip
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,35 +158,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7395836212817225250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547490993807836558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b655a1abd119c449a5d00746a04ffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BulletSpawnPoint: {fileID: 7459635815082358981}
-  cam: {fileID: 0}
-  TailData: {fileID: 11400000, guid: 4548567b8aeaa284b93550d574fc6af5, type: 2}
-  BulletTrail: {fileID: -6588709983893786949}
---- !u!114 &-6588709983893786949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547490993807836558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d2cc98182a98c42ba3ac3aaa2f1320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TailData: {fileID: 11400000, guid: 4548567b8aeaa284b93550d574fc6af5, type: 2}
 --- !u!1 &9186912165357042527
 GameObject:
   m_ObjectHideFlags: 0

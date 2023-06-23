@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GunData : ScriptableObject
 {
-    [SerializeField] Transform bulletSpawnPoint;
-
     [SerializeField] public GameObject ModelPrefab;
-
+    [SerializeField] public string Id;
 }

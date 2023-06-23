@@ -46,7 +46,7 @@ public class GunBaseProyect : GunBase
 
     private void CreateBullet()
     {
-        GameObject proyectile = Instantiate(bullet, gunpoint.transform.position, Quaternion.identity);
+        GameObject proyectile = Instantiate(bullet, BulletSpawnPoint.transform.position, Quaternion.identity);
         //TODO: Fix - Hardcoded value
         Destroy(proyectile, 1f);
         //TODO: Fix - Hardcoded value

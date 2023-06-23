@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d2036c16a262448af23632bf694ec2, type: 3}
+  m_Name: RayGunConfiguration
+  m_EditorClassIdentifier: 
+  ModelPrefab: {fileID: 3547490993807836558, guid: b6c53af1f068ce64c852ecfa6d48ccbf, type: 3}
+  Id: 1
+  Range: 10
+  ShootingSystem: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+  BulletSpawnPoint: {fileID: 0}
+  ImpactParticleSystem: {fileID: 9064919875212695174, guid: 9259bd90a6abf184d8fe214f5d783d4e, type: 3}
+  BulletTrail: {fileID: 328621789431213768, guid: 819cdb129f0ddf34593df0582d56d05d, type: 3}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  BulletSpeed: 100

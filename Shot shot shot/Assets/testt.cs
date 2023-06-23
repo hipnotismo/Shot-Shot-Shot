@@ -5,7 +5,7 @@ using UnityEngine;
 public class testt : MonoBehaviour
 {
     [SerializeField] GunData testttt;
-
+    [SerializeField] CoinCounter coin;
     void Start()
     {
         GameObject visuals = Instantiate(testttt.ModelPrefab);
