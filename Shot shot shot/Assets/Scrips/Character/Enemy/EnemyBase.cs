@@ -11,12 +11,12 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
 
     public void TakeDamage()
     {
-        //TODO: TP2 - SOLID
-        if (OptionalDoor != null)
-        {
-            OptionalDoor.OpDoor();
+        ////TODO: TP2 - SOLID
+        //if (OptionalDoor != null)
+        //{
+        //    OptionalDoor.OpDoor();
 
-        }
+        //}
 
         //TODO: Fix - Why not just call Destroy(DestroyObject.gameObject) ?
         if (DestroyObject!=null)

@@ -6,21 +6,6 @@ public class TutorialGunExtra : MonoBehaviour
 {
     private int count = 0;
     [SerializeField] GameObject TutorialPromp;
-
-    public delegate void TriggerWall();
-    //TODO: TP2 - Remove unused methods/variables
-    public static event TriggerWall Trigger;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (count == 0)
