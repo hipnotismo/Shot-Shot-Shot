@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class CoinCounter : MonoBehaviour
 {
-    [SerializeField] EventMangerScriptable manager;
-    [SerializeField] string tag;
+    [SerializeField] EventMangerScriptable Manager;
+    [SerializeField] string Tag;
     private int coins;
     GunBase Guns;
 
     void OnEnable()
     {
-        manager.StartListening(tag, OnAddCoins);
+        Manager.StartListening(Tag, OnAddCoins);
     }
 
     void OnDisable()
     {
-        manager.StopListening(tag, OnAddCoins);
+        Manager.StopListening(Tag, OnAddCoins);
     }
 
     void OnAddCoins(Dictionary<string, object> message)
