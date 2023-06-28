@@ -2630,6 +2630,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 06801179989d37a40b9df48bb0c971a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8966a09ec81094fca94186a87a695532, type: 2}
     - target: {fileID: 919132149155446097, guid: 06801179989d37a40b9df48bb0c971a8, type: 3}
       propertyPath: m_Name
       value: floor
@@ -3944,6 +3948,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369987518}
     m_Modifications:
+    - target: {fileID: 2215497144735924141, guid: 91e62ebee73755747bc3e4c5c9a70280, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215497144735924141, guid: 91e62ebee73755747bc3e4c5c9a70280, type: 3}
+      propertyPath: TagToRecibe
+      value: Door1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215497144735924141, guid: 91e62ebee73755747bc3e4c5c9a70280, type: 3}
+      propertyPath: TagToReceive
+      value: Door1
+      objectReference: {fileID: 0}
     - target: {fileID: 5182902533228995140, guid: 91e62ebee73755747bc3e4c5c9a70280, type: 3}
       propertyPath: m_RootOrder
       value: -1
