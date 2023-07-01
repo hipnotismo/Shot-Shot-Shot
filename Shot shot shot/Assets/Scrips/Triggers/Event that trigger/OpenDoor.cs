@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class OpenDoor : MonoBehaviour
 {
@@ -8,19 +9,19 @@ public class OpenDoor : MonoBehaviour
     /// <summary>
     /// It has to be the same tag as the one from the trigger it wants to recibe
     /// </summary>
-    [SerializeField] string TagToRecibe;
-    [SerializeField] Transform EndPosition;
+    [SerializeField] private string TagToReceive;
+    [SerializeField] private Transform EndPosition;
+    [SerializeField] private float speed = 300;
     private Transform InitialPosition;
-    private float speed = 300;
 
     void OnEnable()
     {
-        Manager.StartListening(TagToRecibe, MoveDoorToPoint);
+        Manager.StartListening(TagToReceive, MoveDoorToPoint);
     }
 
     void OnDisable()
     {
-        Manager.StopListening(TagToRecibe, MoveDoorToPoint);
+        Manager.StopListening(TagToReceive, MoveDoorToPoint);
     }
 
 
@@ -35,7 +36,9 @@ public class OpenDoor : MonoBehaviour
     /// </summary>
     void MoveDoorToPoint(Dictionary<string, object> message)
     {
-        DoorToOpen(InitialPosition.position, EndPosition.position,speed);
+        UnityEngine.Debug.Log(this.name + " is recibing the message ");
+
+        StartCoroutine(DoorToOpen(InitialPosition.position, EndPosition.position, speed));
         //float step = speed * Time.deltaTime;
 
         //transform.position = Vector3.MoveTowards(transform.position, point.position, step);
@@ -43,11 +46,13 @@ public class OpenDoor : MonoBehaviour
 
     private IEnumerator DoorToOpen(Vector3 InitalPosition, Vector3 EndPosition, float Speed)
     {
-        while (InitalPosition.y !< EndPosition.y)
+        UnityEngine.Debug.Log($"{name}: Moving Door from {InitalPosition} to {EndPosition} with speed {speed}");
+
+        while (transform.position.y > EndPosition.y)
         {
-            InitalPosition = Vector3.Lerp(InitalPosition,EndPosition,speed);
+            transform.position = Vector3.Lerp(transform.position, EndPosition,speed * Time.deltaTime);
+            yield return null;
         }
-        yield return null;
     }
 
 }

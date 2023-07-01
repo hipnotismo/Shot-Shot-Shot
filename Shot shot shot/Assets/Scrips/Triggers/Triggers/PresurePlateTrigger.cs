@@ -17,7 +17,7 @@ public class PresurePlateTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == TagToCollideWith)
         {
-            Debug.Log(this.name + " is starting");
+            Debug.Log(this.name + " is colliding with " + collision.gameObject.name);
             Manager.TriggerEvent(TagToTrigger, new Dictionary<string, object> { { "amount", null } });
         }
         

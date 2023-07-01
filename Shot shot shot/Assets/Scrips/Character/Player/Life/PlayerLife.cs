@@ -9,7 +9,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
     [SerializeField] GameObject GameOverFace;
 
     private float MaxLifeReference;
-    private bool inmune = false;
+    private bool immune = false;
     private void Start()
     {
         MaxLifeReference = life;
@@ -20,6 +20,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
     {
 
         lifebar.fillAmount = life/ MaxLifeReference;
+
         if (life == 0)
         {
             GamerOver();
@@ -37,7 +38,7 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
     public void TakeDamage() 
     {
         //TODO: TP2 - FSM
-        if (inmune==false)
+        if (immune==false)
         {
             life--;
             StartCoroutine(inmunity());
@@ -47,8 +48,8 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
     IEnumerator inmunity() 
     {
-        inmune = true;
+        immune = true;
         yield return new WaitForSeconds(3);
-        inmune = false;
+        immune = false;
     }
 }
