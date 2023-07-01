@@ -3,19 +3,24 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-   /// <summary>
-   /// 
-   /// </summary>
-   
-    //TODO: Documentation - Add summary
+    /// <summary>
+    /// All delegates that get called after input is detected
+    ///  -ShotAction: event related to the left mouse input
+    ///  -PickAction: event related to the keyboard input, E key
+    ///  -DropAction: event related to the keyboard input, F key
+    ///  -PlayerMoveAction: event related to the keyboard input, WASD keys
+    ///  -CameraMoveAction: event related to the mouse movement
+    ///  -PauseAction  and ResumeAction: event related to the keyboard input, P key
+    /// </summary>
+
     public delegate void ShotAction();
     public static event ShotAction ShootFromPickUp;
 
     public delegate void PickAction();
     public static event PickAction PickUp;
 
-    public delegate void DropAtion();
-    public static event DropAtion Drop;
+    public delegate void DropAction();
+    public static event DropAction Drop;
 
     public delegate void PlayerMoveAction(Vector2 dir);
     public static event PlayerMoveAction MovePlayer;
@@ -30,16 +35,9 @@ public class InputManager : MonoBehaviour
     public static event ResumeAction Resume;
 
     private bool IsPause = false;
-
-    //TODO: TP2 - Remove unused methods/variables
-    void Start()
+    public void OnMove(InputValue inputValue)
     {
-
-    }
-
-    public void OnMove(InputValue context)//InputValue context
-    {
-        var movementInput = context.Get<Vector2>();
+        var movementInput = inputValue.Get<Vector2>();
         MovePlayer(movementInput);
     }
 
