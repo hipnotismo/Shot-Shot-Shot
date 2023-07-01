@@ -31,7 +31,7 @@ public class CoinCounter : MonoBehaviour
        // }
        // else
        // {
-       //     Debug.Log(this.name + " Guns is not null");
+            Debug.Log(this.name + " Guns is not null");
 
        // }
     }

@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //TODO: TP2 - Syntax - Consistency in naming convention
 public class Pause : MonoBehaviour
 {
-    // Start is called before the first frame update
     public delegate void ActivationAction();
     public static event ActivationAction Activation;
 
@@ -24,18 +21,7 @@ public class Pause : MonoBehaviour
         InputManager.Pause -= EnterPause;
         InputManager.Resume -= ExitPause;
     }
-    //TODO: TP2 - Remove unused methods/variables
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+ 
     public void EnterPause()
     {
         Time.timeScale = 0;
