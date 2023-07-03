@@ -4,7 +4,6 @@ using UnityEngine.Tilemaps;
 public class GunBaseProyect : GunBase
 {
     [SerializeField] GunProjectileData BulletData;
-    //[SerializeField] GameObject bullet;
 
     private Vector3 destination;
 

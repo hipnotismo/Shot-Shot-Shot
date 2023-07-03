@@ -4,9 +4,11 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour, ITakeDamage
 {
+    public delegate void GameOverAction();
+    public static event GameOverAction GameOver;
+
     [SerializeField] PlayerData PlayerData;
     [SerializeField] Image lifebar;
-    [SerializeField] GameObject GameOverFace;
 
     private float TempLife;
     private bool immune = false;
@@ -24,27 +26,18 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
         if (TempLife == 0)
         {
-            GamerOver();
+            GameOver();
         }
     }
-
-    //TODO: TP2 - SOLID
-    private void GamerOver()
-    {
-        Time.timeScale = 0;
-        GameOverFace.SetActive(true);
-
-    }
+   
 
     public void TakeDamage() 
     {
-        Debug.Log(this.name + " is taking damage");
         if (immune==false)
         {
             TempLife--;
             StartCoroutine(immunity());
         }
-        Debug.Log(this.name + " current life = " + TempLife);
     }
 
     IEnumerator immunity() 
