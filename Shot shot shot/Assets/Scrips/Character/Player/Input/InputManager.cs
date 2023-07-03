@@ -13,8 +13,8 @@ public class InputManager : MonoBehaviour
     ///  -PauseAction  and ResumeAction: event related to the keyboard input, P key
     /// </summary>
 
-    public delegate void ShotAction();
-    public static event ShotAction ShootFromPickUp;
+    public delegate void ShootAction();
+    public static event ShootAction ShootFromPickUp;
 
     public delegate void PickAction();
     public static event PickAction PickUp;

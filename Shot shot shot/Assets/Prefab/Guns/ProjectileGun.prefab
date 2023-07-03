@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3274294944938105425}
   - component: {fileID: 969699935639949372}
   - component: {fileID: -6588709983893786949}
-  m_Layer: 0
+  - component: {fileID: -7938575905387571260}
+  m_Layer: 6
   m_Name: ProjectileGun
   m_TagString: Gun
   m_Icon: {fileID: 0}
@@ -109,6 +110,7 @@ MonoBehaviour:
   BulletSpawnPoint: {fileID: 7459635815082358981}
   cam: {fileID: 0}
   BulletData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
+  BulletCreation: {fileID: -7938575905387571260}
 --- !u!114 &-6588709983893786949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +124,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TailData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
+--- !u!114 &-7938575905387571260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547490993807836558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01838a5d6a580024bb7a3f7ee1749f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
 --- !u!1 &9186912165357042527
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7459635815082358981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +179,10 @@ PrefabInstance:
     - target: {fileID: 3498057253788426683, guid: 2be53638e0ea7da409dec6277c8132ed, type: 3}
       propertyPath: m_Name
       value: assault1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498057253788426683, guid: 2be53638e0ea7da409dec6277c8132ed, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8138237250487574198, guid: 2be53638e0ea7da409dec6277c8132ed, type: 3}
       propertyPath: m_RootOrder

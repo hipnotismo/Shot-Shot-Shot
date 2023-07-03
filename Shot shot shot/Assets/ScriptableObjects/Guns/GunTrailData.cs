@@ -8,8 +8,6 @@ public class GunTrailData : GunData
     [SerializeField]
     public ParticleSystem ShootingSystem;
     [SerializeField]
-    public Transform BulletSpawnPoint;
-    [SerializeField]
     public ParticleSystem ImpactParticleSystem;
     [SerializeField]
     public TrailRenderer BulletTrail;

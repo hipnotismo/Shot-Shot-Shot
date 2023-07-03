@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class GunData : ScriptableObject
 {
-    [SerializeField] public GameObject ModelPrefab;
     [SerializeField] public int Id;
 }

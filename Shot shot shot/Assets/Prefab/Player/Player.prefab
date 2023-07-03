@@ -116,14 +116,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4298834236344361629}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.77, z: 1.0600001}
+  m_LocalRotation: {x: 0, y: -0.001919909, z: 0, w: 0.9999982}
+  m_LocalPosition: {x: 0.263, y: -0.77, z: 1.0600001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8784395177990493368}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.22, z: 0}
 --- !u!1 &4772716609041945610
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 9158595230632979062}
   - component: {fileID: 7615525038477259324}
   - component: {fileID: 2714100709981478033}
-  - component: {fileID: 2657285977171984505}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -394,9 +393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31164663daba5449b9fec0d88bff410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 0}
   WeaponPoint: {fileID: 8339113059186897631}
-  gun: {fileID: 0}
-  gun2: {fileID: 0}
+  TagToReceive: []
+  ID: 0
+  TempID: 0
+  IsColliding: 0
+  CanDrop: 0
 --- !u!114 &7615525038477259324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,39 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564db6926d0cc8048b2d4c015bfd84dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  PlayerData: {fileID: 0}
   lifebar: {fileID: 0}
-  GameOverFace: {fileID: 0}
---- !u!114 &2657285977171984505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590738671872761711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: e781d9de041c6d045b03237ff286b108, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &8798443139439376921
 GameObject:
   m_ObjectHideFlags: 0

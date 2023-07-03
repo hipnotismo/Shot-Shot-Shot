@@ -4,18 +4,19 @@ using UnityEngine.Tilemaps;
 public class GunBaseProyect : GunBase
 {
     [SerializeField] GunProjectileData BulletData;
+    [SerializeField] CreateBullet BulletCreation;
 
     private Vector3 destination;
 
     private void OnEnable()
     {
         BulletSpawnPoint = this.transform;
-        InputManager.ShootFromPickUp += Shoot;
+        FireWeapon.ShootWeapon += Shoot;
     }
 
     private void OnDisable()
     {
-        InputManager.ShootFromPickUp -= Shoot;
+        FireWeapon.ShootWeapon -= Shoot;
     }
 
     public override void Shoot()
@@ -29,14 +30,17 @@ public class GunBaseProyect : GunBase
         if (Physics.Raycast(spawnPosition, spawnDirection, out hit, Mathf.Infinity))
         {
             destination = hit.point;
-            CreateBullet();
+            BulletCreation.BulletCreation(spawnPosition, destination);
+            //CreateBullet();
 
         }
         else
         {
             destination = spawnPosition
                 + spawnDirection * BulletData.Range;
-            CreateBullet();
+            BulletCreation.BulletCreation(spawnPosition, destination);
+
+            //CreateBullet();
 
         }
     }

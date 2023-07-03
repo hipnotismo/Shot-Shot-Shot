@@ -1,6 +1,5 @@
 using UnityEngine;
 
-//TODO: TP2 - Syntax - Consistency in naming convention
 public class Pause : MonoBehaviour
 {
     public delegate void ActivationAction();

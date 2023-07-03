@@ -7,7 +7,6 @@ public class MovingEnemyStateMachine : MonoBehaviour
     [SerializeField] private IEnemyState currentState;
 
     public WanderingState wanderingState = new WanderingState();
-    public GoToPointState goalState = new GoToPointState();
 
     public NavMeshAgent navAgent;
 
@@ -21,7 +20,7 @@ public class MovingEnemyStateMachine : MonoBehaviour
 
     private void OnEnable()
     {
-        currentState = goalState;
+        currentState = wanderingState;
     }
 
     private void Update()

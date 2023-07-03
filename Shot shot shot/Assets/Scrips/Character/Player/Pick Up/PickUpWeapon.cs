@@ -12,12 +12,16 @@ public class PickUpWeapon : MonoBehaviour
     public delegate void DestroyAction();
     public static event DestroyAction DestroyWeapon;
 
+    public delegate void FireAction();
+    public static event FireAction CanFireWeapon;
+
     [SerializeField] private EventMangerScriptable Manager;
     [SerializeField] private Transform WeaponPoint;
     [SerializeField] private List<string> TagToReceive = new List<string>();
     [SerializeField] private int ID = 0;
     [SerializeField] private int TempID = 0;
     [SerializeField] private bool IsColliding = false;
+    [SerializeField] private bool CanDrop = false;
 
     private void OnEnable()
     {
@@ -40,7 +44,12 @@ public class PickUpWeapon : MonoBehaviour
 
     private void Drop()
     {
-        DropWeapon(ID);
+        if (CanDrop == true)
+        {
+            DropWeapon(ID);
+            CanFireWeapon();
+            CanDrop = false;
+        }
     }
 
     /// <summary>
@@ -53,6 +62,8 @@ public class PickUpWeapon : MonoBehaviour
             ID = TempID;
             EquipWeapon(ID);
             DestroyWeapon();
+            CanFireWeapon();
+            CanDrop = true;
         }
     }
 

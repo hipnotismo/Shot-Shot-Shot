@@ -7,12 +7,12 @@ public class GunBaseRay : GunBase
 
     private void OnEnable()
     {
-        InputManager.ShootFromPickUp += Shoot;
+        FireWeapon.ShootWeapon += Shoot;
     }
 
     private void OnDisable()
     {
-        InputManager.ShootFromPickUp -= Shoot;
+        FireWeapon.ShootWeapon -= Shoot;
     }
 
 

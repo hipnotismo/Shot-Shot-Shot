@@ -31,6 +31,8 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name + "is colliding");
+
         if (collision.gameObject.tag == CanDamageTag)
         {           
             ITakeDamage isHit = collision.gameObject.GetComponent<ITakeDamage>();
@@ -40,9 +42,11 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
             }
         }
 
-        //if (collision.gameObject.tag == CanTakeDamageFromTag)
-        //{
-        //    TakeDamage();
-        //}
+        if (collision.gameObject.tag == CanTakeDamageFromTag)
+        {
+            Debug.Log(collision.gameObject.name + "is bullet");
+
+            TakeDamage();
+        }
     }
 }
