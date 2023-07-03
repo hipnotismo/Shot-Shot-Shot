@@ -32,16 +32,14 @@ public class OpenDoor : MonoBehaviour
 
     
     /// <summary>
-    /// Does a lerpt that moves the door to a point depending on the speed
+    /// Does a lerp that moves the door to a point depending on the speed
     /// </summary>
     void MoveDoorToPoint(Dictionary<string, object> message)
     {
         UnityEngine.Debug.Log(this.name + " is recibing the message ");
 
         StartCoroutine(DoorToOpen(InitialPosition.position, EndPosition.position, speed));
-        //float step = speed * Time.deltaTime;
-
-        //transform.position = Vector3.MoveTowards(transform.position, point.position, step);
+     
     }
 
     private IEnumerator DoorToOpen(Vector3 InitalPosition, Vector3 EndPosition, float Speed)

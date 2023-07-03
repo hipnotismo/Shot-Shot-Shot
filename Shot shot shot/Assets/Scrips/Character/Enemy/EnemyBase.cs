@@ -1,28 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 
 public class EnemyBase : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] OpenDoor OptionalDoor;
-    [SerializeField] DestroyObject DestroyObject;
+
+    [SerializeField] string CanTakeDamageFromTag;
+    [SerializeField] string CanDamageTag;
 
     public void TakeDamage()
     {
-        ////TODO: TP2 - SOLID
-        //if (OptionalDoor != null)
-        //{
-        //    OptionalDoor.OpDoor();
-
-        //}
 
         //TODO: Fix - Why not just call Destroy(DestroyObject.gameObject) ?
-        if (DestroyObject!=null)
-        {
-            DestroyObject.destroyObject();
-        }
+        Destroy(gameObject);
+
         //TODO - Fix - Hardcoded value
         if (gameObject.tag != "boss")
         {
@@ -31,33 +20,29 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
         }
     }
 
-    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     private void OnTriggerEnter(Collider other)
     {
-        //TODO: TP2 - Remove unused methods/variables
-        //Debug.Log("here");
-        //Debug.Log(other.transform.name);
-        //ITakeDamage isHit = other.GetComponent<ITakeDamage>();
-        //isHit.TakeDamage();
-
-        //TODO - Fix - Hardcoded value
-        if (other.tag == "bullet")
+       
+        if (other.tag == CanTakeDamageFromTag)
         {
             TakeDamage();
         }
 
     }
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            //TODO - Fix - Bad log/Log out of context
-            Debug.Log("here");
-            //BUG: Could trigger a NullReferenceException
+        if (collision.gameObject.tag == CanDamageTag)
+        {           
             ITakeDamage isHit = collision.gameObject.GetComponent<ITakeDamage>();
-
-            isHit.TakeDamage();
+            if (isHit != null)
+            {
+                isHit.TakeDamage();
+            }
         }
 
+        //if (collision.gameObject.tag == CanTakeDamageFromTag)
+        //{
+        //    TakeDamage();
+        //}
     }
 }

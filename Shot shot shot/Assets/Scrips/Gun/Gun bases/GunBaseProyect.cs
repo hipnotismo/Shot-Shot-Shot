@@ -1,36 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GunBaseProyect : GunBase
-{    
-    [SerializeField] GameObject bullet;
+{
+    [SerializeField] GunProjectileData BulletData;
+    //[SerializeField] GameObject bullet;
 
     private Vector3 destination;
 
-    void Start()
+    private void OnEnable()
     {
-        this.GetComponent<Rigidbody>().isKinematic = true;
-
+        BulletSpawnPoint = this.transform;
+        InputManager.ShootFromPickUp += Shoot;
     }
 
-    void Update()
+    private void OnDisable()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.green);
-
+        InputManager.ShootFromPickUp -= Shoot;
     }
 
     public override void Shoot()
     {
-        //TODO: Fix - Bad log/Log out of context
-        Debug.Log("Shooting instances");
-
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
 
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        Vector3 spawnPosition = BulletSpawnPoint.transform.position;
+        Vector3 spawnDirection = BulletSpawnPoint.transform.forward;
+
+        if (Physics.Raycast(spawnPosition, spawnDirection, out hit, Mathf.Infinity))
         {
             destination = hit.point;
             CreateBullet();
@@ -38,7 +35,8 @@ public class GunBaseProyect : GunBase
         }
         else
         {
-            destination = ray.GetPoint(1000);
+            destination = spawnPosition
+                + spawnDirection * BulletData.Range;
             CreateBullet();
 
         }
@@ -46,10 +44,10 @@ public class GunBaseProyect : GunBase
 
     private void CreateBullet()
     {
-        GameObject proyectile = Instantiate(bullet, BulletSpawnPoint.transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(BulletData.Bullet, BulletSpawnPoint.transform.position, Quaternion.identity);
         //TODO: Fix - Hardcoded value
-        Destroy(proyectile, 1f);
+        Destroy(projectile, 1f);
         //TODO: Fix - Hardcoded value
-        proyectile.GetComponent<Rigidbody>().AddForce((destination - proyectile.transform.position).normalized * 50.0f, ForceMode.Impulse);
+        projectile.GetComponent<Rigidbody>().AddForce((destination - projectile.transform.position).normalized * 50.0f, ForceMode.Impulse);
     }
 }

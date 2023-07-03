@@ -1,12 +1,24 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyWorldWeapon : MonoBehaviour
 {
-    private void OnEnable()
+    [SerializeField] string CanCollideTag;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        PickUpWeapon.DestroyWeapon += DestroyWeapon;
+        if (collision.gameObject.tag == CanCollideTag)
+        {
+            PickUpWeapon.DestroyWeapon += DestroyWeapon;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == CanCollideTag)
+        {
+            PickUpWeapon.DestroyWeapon -= DestroyWeapon;
+        }
     }
 
     private void OnDisable()

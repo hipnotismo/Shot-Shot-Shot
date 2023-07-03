@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Weapon List
   m_EditorClassIdentifier: 
   WeaponPrefabs:
-  - {fileID: 3547490993807836558, guid: 8175fe273651a33439f73c795dc12c99, type: 3}
+  - {fileID: 3547490993807836558, guid: 21d3cb7e7edb2884c9937503ad8b6b1a, type: 3}
   - {fileID: 3547490993807836558, guid: 86da29c44f2ca594992fcd731041cc3d, type: 3}
+  WorldWeaponPrefabs:
+  - {fileID: 4776447423129194101, guid: 3d74cb24c8818b34dbf35abba9e984d9, type: 3}
+  - {fileID: 4776447423129194101, guid: 499f8be0f87c1cc43839f85c1f4a182c, type: 3}

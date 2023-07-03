@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,19 +38,9 @@ public class PickUpWeapon : MonoBehaviour
 
     }
 
-    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     private void Drop()
     {
         DropWeapon(ID);
-        //if (gun != null)
-        //{
-        //    WeaponPoint.DetachChildren();
-        //    gun.transform.eulerAngles = new Vector3(gun.transform.position.x, gun.transform.position.z, gun.transform.position.y);
-        //    gun.GetComponent<Rigidbody>().isKinematic = false;
-        //    gun.GetComponent<MeshCollider>().enabled = true;
-        //    gun = null;
-        //}
-
     }
 
     /// <summary>
@@ -65,27 +54,6 @@ public class PickUpWeapon : MonoBehaviour
             EquipWeapon(ID);
             DestroyWeapon();
         }
-        //if (gun == null && gun2 != null)
-        //{
-
-        //    gun = gun2;
-        //    gun.GetComponent<Rigidbody>().isKinematic = true;
-
-        //    gun.transform.position = WeaponPoint.transform.position;
-        //    gun.transform.rotation = WeaponPoint.transform.rotation;
-
-        //    gun.GetComponent<MeshCollider>().enabled = false;
-        //    gun.transform.SetParent(WeaponPoint);
-        //    int WeaponLayer = LayerMask.NameToLayer("weapon");
-
-        //    gun.gameObject.layer = WeaponLayer;
-
-        //    foreach (Transform child in gun.transform)
-        //    {
-        //        child.gameObject.layer = WeaponLayer;
-        //    }
-        //}
-
     }
 
     private void SetID(Dictionary<string, object> message)

@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 3109203194794524079}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4874805851119704351
 BoxCollider:
@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2472c1a92460fb9478d7518639441001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanCollideTag: Player
 --- !u!1001 &8802647219598427345
 PrefabInstance:
   m_ObjectHideFlags: 0

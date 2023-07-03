@@ -4,24 +4,25 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] float life;
+    [SerializeField] PlayerData PlayerData;
     [SerializeField] Image lifebar;
     [SerializeField] GameObject GameOverFace;
 
-    private float MaxLifeReference;
+    private float TempLife;
     private bool immune = false;
+
     private void Start()
     {
-        MaxLifeReference = life;
+        TempLife = PlayerData.Life;
        
     }
 
     private void Update()
     {
 
-        lifebar.fillAmount = life/ MaxLifeReference;
+        lifebar.fillAmount =  TempLife / PlayerData.Life;
 
-        if (life == 0)
+        if (TempLife == 0)
         {
             GamerOver();
         }
@@ -37,16 +38,16 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
 
     public void TakeDamage() 
     {
-        //TODO: TP2 - FSM
+        Debug.Log(this.name + " is taking damage");
         if (immune==false)
         {
-            life--;
-            StartCoroutine(inmunity());
+            TempLife--;
+            StartCoroutine(immunity());
         }
-       
+        Debug.Log(this.name + " current life = " + TempLife);
     }
 
-    IEnumerator inmunity() 
+    IEnumerator immunity() 
     {
         immune = true;
         yield return new WaitForSeconds(3);

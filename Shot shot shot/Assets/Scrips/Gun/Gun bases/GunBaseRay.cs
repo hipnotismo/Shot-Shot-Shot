@@ -15,19 +15,22 @@ public class GunBaseRay : GunBase
         InputManager.ShootFromPickUp -= Shoot;
     }
 
+
     public override void Shoot()
     {
         RaycastHit hit;
 
         BulletTrail.ParticlePlay();
+        Vector3 spawnPosition = BulletSpawnPoint.transform.position;
+        Vector3 spawnDirection = BulletSpawnPoint.transform.forward;
 
-        if (Physics.Raycast(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward, out hit, TailData.Range))
+        if (Physics.Raycast(spawnPosition, spawnDirection, out hit, TailData.Range))
         {
             Debug.Log(hit.transform.name);
-         
+
             ITakeDamage isHit = hit.collider.GetComponent<ITakeDamage>();
-           
-            BulletTrail.BulletInstance(BulletSpawnPoint.transform.position, Quaternion.identity, hit.point, hit.normal, true);
+
+            BulletTrail.BulletInstance(spawnPosition, Quaternion.identity, hit.point, hit.normal, true);
 
             if (isHit != null)
             {
@@ -35,8 +38,10 @@ public class GunBaseRay : GunBase
             }
         }
         else
-        {          
-           BulletTrail.BulletInstance(BulletSpawnPoint.transform.position, Quaternion.identity,hit.point, hit.normal, false);
+        {
+
+            BulletTrail.BulletInstance(spawnPosition, Quaternion.identity, spawnPosition
+                + spawnDirection * TailData.Range, hit.normal, false);
         }
     }
 }
