@@ -7,20 +7,15 @@ using System.Collections.Generic;
 public class MainMenu : MonoBehaviour
 {
     public GameObject menu;
-    public GameObject LevelSelect;
     public GameObject loadingInterface;
     public Image loadingProgressBar;
-    //List of the scenes to load from Main Menu
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
     public void LoadLevel(string SceneName)
     {
         HideMenu();
         ShowLoadingScreen();
-        //Load the Scene asynchronously in the background
-        scenesToLoad.Add(SceneManager.LoadSceneAsync(SceneName));
-        //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
-       // scenesToLoad.Add(SceneManager.LoadSceneAsync("Level01Part01", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync(SceneName));        
         StartCoroutine(LoadingScreen());
     }
 
@@ -34,18 +29,6 @@ public class MainMenu : MonoBehaviour
         menu.SetActive(true);
     }
 
-    public void ShowLevelSelect()
-    {
-        //TODO: Fix - Repeated code
-        LevelSelect.SetActive(true);
-    }
-
-    public void HideLevelSelect()
-    {
-        //TODO: Fix - Repeated code
-        LevelSelect.SetActive(false);
-    }
-
     public void ShowLoadingScreen()
     {
         loadingInterface.SetActive(true);
@@ -53,16 +36,12 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadingScreen()
     {
-        //TODO: Is this copied-pasted code??
         float totalProgress = 0;
-        //Iterate through all the scenes to load
         for (int i = 0; i < scenesToLoad.Count; ++i)
         {
             while (!scenesToLoad[i].isDone)
             {
-                //Adding the scene progress to the total progress
                 totalProgress += scenesToLoad[i].progress;
-                //the fillAmount needs a value between 0 and 1, so we devide the progress by the number of scenes to load
                 loadingProgressBar.fillAmount = totalProgress / scenesToLoad.Count;
                 yield return null;
             }
