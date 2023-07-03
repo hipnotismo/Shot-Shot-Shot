@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameplayMenu : MonoBehaviour
 {
-    [SerializeField] GameObject PauseMenu;
+    [SerializeField] private GameObject PauseMenu;
+
+    [SerializeField] private string MenuToReturn;
+
 
     private void OnValidate()
     {
@@ -21,12 +24,13 @@ public class GameplayMenu : MonoBehaviour
     public void RetrunToMain()
     {
         Time.timeScale = 1;
-        //TODO: Fix - Hardcoded value
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(MenuToReturn);
 
     }
 
-    //TODO: Documentation - Add summary
+    /// <summary>
+    /// Reloads current scene
+    /// </summary>
     public void Retry()
     {
         Time.timeScale = 1;
@@ -43,10 +47,26 @@ public class GameplayMenu : MonoBehaviour
 
     public void ActivatePause()
     {
-        PauseMenu.SetActive(true);
+        if (PauseMenu != null)
+        {
+            PauseMenu.SetActive(true);
+
+        }
+        else
+        {
+            Debug.Log(PauseMenu.name + " is null");
+        }
     }
     public void DeactivatePause()
     {
-        PauseMenu.SetActive(false);
+        if (PauseMenu != null)
+        {
+            PauseMenu.SetActive(false);
+
+        }
+        else
+        {
+            Debug.Log(PauseMenu.name + " is null");
+        }
     }
 }

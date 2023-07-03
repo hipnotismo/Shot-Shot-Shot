@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 9158595230632979062}
   - component: {fileID: 7615525038477259324}
   - component: {fileID: 2714100709981478033}
+  - component: {fileID: 3164822920147779331}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -393,9 +394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31164663daba5449b9fec0d88bff410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 0}
+  Manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
   WeaponPoint: {fileID: 8339113059186897631}
-  TagToReceive: []
+  TagToReceive:
+  - SetID
+  - CleanID
   ID: 0
   TempID: 0
   IsColliding: 0
@@ -426,6 +429,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerData: {fileID: 0}
   lifebar: {fileID: 0}
+--- !u!114 &3164822920147779331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590738671872761711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c3fd52624be3647b0ca203f6953d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8798443139439376921
 GameObject:
   m_ObjectHideFlags: 0

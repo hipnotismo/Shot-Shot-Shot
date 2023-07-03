@@ -4,7 +4,7 @@ using UnityEngine;
 /// </summary>
 public class BossHealth : MonoBehaviour
 {
-    [SerializeField] int bossTotalHealth = 3;
+    [SerializeField] private int bossTotalHealth;
     //TODO: TP2 - SOLID
     [SerializeField] GameObject win;
 

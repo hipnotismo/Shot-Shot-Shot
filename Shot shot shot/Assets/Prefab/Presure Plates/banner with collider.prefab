@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff05135f31156274ea748ce8b3240e75, type: 3}
       propertyPath: m_Name
-      value: banner Variant
+      value: banner with collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63,8 +63,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ff05135f31156274ea748ce8b3240e75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5951428416196614790}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ff05135f31156274ea748ce8b3240e75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6986499024501739705}
   m_SourcePrefab: {fileID: 100100000, guid: ff05135f31156274ea748ce8b3240e75, type: 3}
---- !u!1 &6797850816903227351 stripped
+--- !u!1 &7643770863780574121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ff05135f31156274ea748ce8b3240e75, type: 3}
   m_PrefabInstance: {fileID: 7409908802047315704}
@@ -75,7 +78,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6797850816903227351}
+  m_GameObject: {fileID: 7643770863780574121}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -90,3 +93,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.664351, z: 0.099999964}
   m_Center: {x: 0, y: 0.5428245, z: -0.475}
+--- !u!114 &6986499024501739705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643770863780574121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacf1a80e215071439addaff98888449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
+  TagToCollideWith: Player
+  TagToTrigger: Door1

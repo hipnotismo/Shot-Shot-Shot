@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Basic fields present in all enemies
+/// </summary>
 public class EnemyBase : MonoBehaviour, ITakeDamage
 {
 
@@ -8,16 +10,7 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
 
     public void TakeDamage()
     {
-
-        //TODO: Fix - Why not just call Destroy(DestroyObject.gameObject) ?
-        Destroy(gameObject);
-
-        //TODO - Fix - Hardcoded value
-        if (gameObject.tag != "boss")
-        {
-            Destroy(gameObject);
-
-        }
+        Destroy(gameObject);       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +24,6 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name + "is colliding");
 
         if (collision.gameObject.tag == CanDamageTag)
         {           
@@ -44,7 +36,6 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
 
         if (collision.gameObject.tag == CanTakeDamageFromTag)
         {
-            Debug.Log(collision.gameObject.name + "is bullet");
 
             TakeDamage();
         }

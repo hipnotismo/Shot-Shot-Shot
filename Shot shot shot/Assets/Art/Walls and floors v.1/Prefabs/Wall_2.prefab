@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1206443419137854109}
   - component: {fileID: 3569705695897411862}
   - component: {fileID: 3879824048411362927}
-  - component: {fileID: 438898915420227969}
+  - component: {fileID: -2262829211517615460}
   m_Layer: 0
   m_Name: Wall_2
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &438898915420227969
-MeshCollider:
+--- !u!65 &-2262829211517615460
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2cd7ec39396204aaaa6a97d32bd35172, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.0067637367, z: 0.019856615}
+  m_Center: {x: 0, y: -0.0020569696, z: -0.000071695555}
