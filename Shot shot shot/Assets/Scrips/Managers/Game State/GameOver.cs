@@ -19,7 +19,10 @@ public class GameOver : MonoBehaviour
     {
         PlayerLife.GameOver -= GamerOver;
     }
-  
+
+    /// <summary>
+    /// Pauses the game and activates the menu related to game over
+    /// </summary>
     private void GamerOver()
     {
         Time.timeScale = 0;

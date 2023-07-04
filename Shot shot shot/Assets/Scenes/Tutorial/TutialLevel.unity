@@ -202,6 +202,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3028044939089257197, guid: fb55e5f263dc79544b91f428dd697c4d, type: 3}
   m_PrefabInstance: {fileID: 3681815623641885119}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &76710781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6653803904009786940, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 1070042403011115910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &90264946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3028044939089257197, guid: fb55e5f263dc79544b91f428dd697c4d, type: 3}
@@ -1854,6 +1859,10 @@ PrefabInstance:
       propertyPath: GameOverFace
       value: 
       objectReference: {fileID: 346471347}
+    - target: {fileID: 6423202606486366669, guid: 11211163fea3f76489dada6f320e8844, type: 3}
+      propertyPath: GameOverButton
+      value: 
+      objectReference: {fileID: 2020272274}
     - target: {fileID: 6442610613629660769, guid: 11211163fea3f76489dada6f320e8844, type: 3}
       propertyPath: m_Name
       value: ---Mangers---
@@ -1902,6 +1911,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8201258105753691438, guid: 11211163fea3f76489dada6f320e8844, type: 3}
+      propertyPath: WinFace
+      value: 
+      objectReference: {fileID: 97381929}
+    - target: {fileID: 8201258105753691438, guid: 11211163fea3f76489dada6f320e8844, type: 3}
+      propertyPath: WinButton
+      value: 
+      objectReference: {fileID: 76710781}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3478,6 +3495,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1206443419137854109, guid: e125ee33af41143b8becc869e2706998, type: 3}
   m_PrefabInstance: {fileID: 2006567338}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2020272274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161558158258187198, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 1070042403011115910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2104095189 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9002098987554461397, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
@@ -3505,6 +3527,10 @@ PrefabInstance:
       propertyPath: win
       value: 
       objectReference: {fileID: 97381929}
+    - target: {fileID: 1243072466428237038, guid: e8b43b6f29815b24eb85bbc04a4904e3, type: 3}
+      propertyPath: CanCollideWithTag
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4937684910469814433, guid: e8b43b6f29815b24eb85bbc04a4904e3, type: 3}
       propertyPath: m_RootOrder
       value: 6

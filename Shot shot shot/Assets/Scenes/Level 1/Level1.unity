@@ -3535,7 +3535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901939154157454113, guid: 3d74cb24c8818b34dbf35abba9e984d9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6901939154157454113, guid: 3d74cb24c8818b34dbf35abba9e984d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4451,6 +4451,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8201258105753691438, guid: 11211163fea3f76489dada6f320e8844, type: 3}
+      propertyPath: WinFace
+      value: 
+      objectReference: {fileID: 321839837}
+    - target: {fileID: 8201258105753691438, guid: 11211163fea3f76489dada6f320e8844, type: 3}
+      propertyPath: WinButton
+      value: 
+      objectReference: {fileID: 2084632269}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5419,6 +5427,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+--- !u!1 &2084632269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6653803904009786940, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 2084632268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2117864304
 PrefabInstance:
   m_ObjectHideFlags: 0
