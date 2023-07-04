@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c72292d152051d4b9c461403cd7f0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
+  TagToReceive: WIN
   WinFace: {fileID: 0}
   WinButton: {fileID: 0}
 --- !u!1 &6442610613629660769
@@ -124,7 +126,7 @@ Transform:
   - {fileID: 6564135069053457876}
   - {fileID: 1153084515674983379}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7618186741206501395
 GameObject:

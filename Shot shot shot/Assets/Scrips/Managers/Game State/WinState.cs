@@ -5,8 +5,9 @@ using UnityEngine.EventSystems;
 
 public class WinState : MonoBehaviour
 {
+    [SerializeField] private EventMangerScriptable Manager;
 
-
+    [SerializeField] private string TagToReceive;
     [SerializeField] private GameObject WinFace;
     [SerializeField] private GameObject WinButton;
 
@@ -15,18 +16,18 @@ public class WinState : MonoBehaviour
     private void OnEnable()
     {
         m_EventSystem = EventSystem.current;
-        WinActivation.WinGame += WinGame;
+        Manager.StartListening(TagToReceive, WinGame);
     }
 
     private void OnDisable()
     {
-        WinActivation.WinGame -= WinGame;
+        Manager.StopListening(TagToReceive, WinGame);
     }
 
     /// <summary>
     /// Pauses the game and activates the menu related to wining the level
     /// </summary>
-    private void WinGame()
+    private void WinGame(Dictionary<string, object> message)
     {
         WinFace.SetActive(true);
         m_EventSystem.SetSelectedGameObject(WinButton);

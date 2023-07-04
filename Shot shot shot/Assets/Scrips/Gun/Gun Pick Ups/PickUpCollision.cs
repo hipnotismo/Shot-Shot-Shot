@@ -8,6 +8,7 @@ public class PickUpCollision : MonoBehaviour
 {
     [SerializeField] EventMangerScriptable Manager;
     [SerializeField] List<string> TagToSend = new List<string>();
+    [SerializeField] string MessageToSend;
     [SerializeField] string CanCollideTag;
     [SerializeField] GunData GunData;
 
@@ -16,17 +17,17 @@ public class PickUpCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == CanCollideTag)
         {
-            Manager.TriggerEvent(TagToSend[0], new Dictionary<string, object> { { "ID", GunData.Id } });
+            Manager.TriggerEvent(TagToSend[0], new Dictionary<string, object> { { MessageToSend, GunData.Id } });
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        Manager.TriggerEvent(TagToSend[1], new Dictionary<string, object> { { "ID", null } });
+        Manager.TriggerEvent(TagToSend[1], new Dictionary<string, object> { { MessageToSend, null } });
     }
 
     private void OnDestroy()
     {
-        Manager.TriggerEvent(TagToSend[1], new Dictionary<string, object> { { "ID", null } });
+        Manager.TriggerEvent(TagToSend[1], new Dictionary<string, object> { { MessageToSend, null } });
     }
 }

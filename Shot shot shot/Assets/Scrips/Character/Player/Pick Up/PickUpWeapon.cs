@@ -18,6 +18,7 @@ public class PickUpWeapon : MonoBehaviour
     [SerializeField] private EventMangerScriptable Manager;
     [SerializeField] private Transform WeaponPoint;
     [SerializeField] private List<string> TagToReceive = new List<string>();
+    [SerializeField] string MessageToReceive;
     [SerializeField] private int ID = 0;
     [SerializeField] private int TempID = 0;
     [SerializeField] private bool IsColliding = false;
@@ -69,7 +70,7 @@ public class PickUpWeapon : MonoBehaviour
 
     private void SetID(Dictionary<string, object> message)
     {
-        TempID = (int)message["ID"];
+        TempID = (int)message[MessageToReceive];
         IsColliding = true;
     }
 

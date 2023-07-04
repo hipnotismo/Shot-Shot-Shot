@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf10f1bbbaceed4fb7ed0fb623e5288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
+  TagToSend: WIN
+  MessageToSend: WIN
   CanCollideWithTag: Player
 --- !u!1001 &2993074707530573920
 PrefabInstance:

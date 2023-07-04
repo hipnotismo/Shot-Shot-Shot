@@ -1,17 +1,10 @@
 using UnityEngine;
 
-public class BuletDamage : MonoBehaviour/*, ITakeDamage*/
+public class BuletDamage : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Bullet git " + other.name);
+        Debug.Log("Bullet hit " + other.name);
         ITakeDamage isHit = other.GetComponent<ITakeDamage>();
-        //isHit.TakeDamage();
-
     }
-
-    ////TODO: TP2 - SOLID
-    //public void TakeDamage()
-    //{
-    //}
 }

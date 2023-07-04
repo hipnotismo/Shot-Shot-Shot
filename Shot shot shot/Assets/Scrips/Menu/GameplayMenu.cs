@@ -47,11 +47,9 @@ public class GameplayMenu : MonoBehaviour
 
     public void ActivatePause()
     {
-        Debug.Log( " we enter activate pause");
 
         if (PauseMenu != null)
         {
-            Debug.Log(" we enter pause menu is not null");
 
             PauseMenu.SetActive(true);
 

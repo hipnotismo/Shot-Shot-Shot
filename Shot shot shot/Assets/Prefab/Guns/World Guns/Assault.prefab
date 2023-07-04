@@ -72,6 +72,7 @@ MonoBehaviour:
   TagToSend:
   - SetID
   - CleanID
+  MessageToSend: ID
   CanCollideTag: Player
   GunData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
 --- !u!114 &1759043226388241225

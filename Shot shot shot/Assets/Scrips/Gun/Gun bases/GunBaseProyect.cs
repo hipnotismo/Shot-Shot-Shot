@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class GunBaseProyect : GunBase
 {
@@ -31,7 +30,6 @@ public class GunBaseProyect : GunBase
         {
             destination = hit.point;
             BulletCreation.BulletCreation(spawnPosition, destination);
-            //CreateBullet();
 
         }
         else
@@ -39,18 +37,6 @@ public class GunBaseProyect : GunBase
             destination = spawnPosition
                 + spawnDirection * BulletData.Range;
             BulletCreation.BulletCreation(spawnPosition, destination);
-
-            //CreateBullet();
-
         }
-    }
-
-    private void CreateBullet()
-    {
-        GameObject projectile = Instantiate(BulletData.Bullet, BulletSpawnPoint.transform.position, Quaternion.identity);
-        //TODO: Fix - Hardcoded value
-        Destroy(projectile, 1f);
-        //TODO: Fix - Hardcoded value
-        projectile.GetComponent<Rigidbody>().AddForce((destination - projectile.transform.position).normalized * 50.0f, ForceMode.Impulse);
     }
 }

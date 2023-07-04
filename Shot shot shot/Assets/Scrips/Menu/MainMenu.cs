@@ -6,43 +6,43 @@ using System.Collections.Generic;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject menu;
-    public GameObject loadingInterface;
-    public Image loadingProgressBar;
-    List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
+    public GameObject Menu;
+    public GameObject LoadingInterface;
+    public Image LoadingProgressBar;
+    List<AsyncOperation> ScenesToLoad = new List<AsyncOperation>();
 
     public void LoadLevel(string SceneName)
     {
         HideMenu();
         ShowLoadingScreen();
-        scenesToLoad.Add(SceneManager.LoadSceneAsync(SceneName));        
+        ScenesToLoad.Add(SceneManager.LoadSceneAsync(SceneName));        
         StartCoroutine(LoadingScreen());
     }
 
     public void HideMenu()
     {
-        menu.SetActive(false);
+        Menu.SetActive(false);
     }
 
     public void ShowMenu()
     {
-        menu.SetActive(true);
+        Menu.SetActive(true);
     }
 
     public void ShowLoadingScreen()
     {
-        loadingInterface.SetActive(true);
+        LoadingInterface.SetActive(true);
     }
 
     IEnumerator LoadingScreen()
     {
         float totalProgress = 0;
-        for (int i = 0; i < scenesToLoad.Count; ++i)
+        for (int i = 0; i < ScenesToLoad.Count; ++i)
         {
-            while (!scenesToLoad[i].isDone)
+            while (!ScenesToLoad[i].isDone)
             {
-                totalProgress += scenesToLoad[i].progress;
-                loadingProgressBar.fillAmount = totalProgress / scenesToLoad.Count;
+                totalProgress += ScenesToLoad[i].progress;
+                LoadingProgressBar.fillAmount = totalProgress / ScenesToLoad.Count;
                 yield return null;
             }
         }

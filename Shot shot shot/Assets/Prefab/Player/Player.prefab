@@ -399,6 +399,7 @@ MonoBehaviour:
   TagToReceive:
   - SetID
   - CleanID
+  MessageToReceive: ID
   ID: 0
   TempID: 0
   IsColliding: 0

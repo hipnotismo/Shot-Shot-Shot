@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79d3ddae5e5c8ef49ba61011a7138efa
+guid: 9d6a056a39398d54091cac7afe71980c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - THE BOKRUN Trial
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 59d42377daf8e724191f544836deed82, type: 3}
-  - {fileID: 12800000, guid: 692cd1a510014564a9a0f01fdaebc80d, type: 3}
+  - Viory
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
