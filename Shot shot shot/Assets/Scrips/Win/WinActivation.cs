@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 public class WinActivation : MonoBehaviour
 {
-    public delegate void WinAction();
-    public static event WinAction WinGame;
-
     [SerializeField] private EventMangerScriptable Manager;
     [SerializeField] string TagToSend;
     [SerializeField] string MessageToSend;
