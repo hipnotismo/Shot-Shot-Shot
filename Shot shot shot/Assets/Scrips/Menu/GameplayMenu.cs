@@ -10,7 +10,7 @@ public class GameplayMenu : MonoBehaviour
     [SerializeField] private string MenuToReturn;
 
 
-    private void OnValidate()
+    private void OnEnable()
     {
         Pause.Activation += ActivatePause;
         Pause.DeActivation += DeactivatePause;
@@ -56,7 +56,7 @@ public class GameplayMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log(PauseMenu.name + " is null");
+            Debug.Log(nameof(PauseMenu) + " is null");
         }
     }
     public void DeactivatePause()
@@ -68,7 +68,7 @@ public class GameplayMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log(PauseMenu.name + " is null");
+            Debug.Log(nameof(PauseMenu) + " is null");
         }
     }
 }

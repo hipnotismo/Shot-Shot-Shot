@@ -23,6 +23,7 @@ public class PickUpWeapon : MonoBehaviour
     [SerializeField] private int TempID = 0;
     [SerializeField] private bool IsColliding = false;
     [SerializeField] private bool CanDrop = false;
+    [SerializeField] private bool CanPick = true;
 
     private void OnEnable()
     {
@@ -50,6 +51,7 @@ public class PickUpWeapon : MonoBehaviour
             DropWeapon(ID);
             CanFireWeapon();
             CanDrop = false;
+            CanPick = true;
         }
     }
 
@@ -58,13 +60,14 @@ public class PickUpWeapon : MonoBehaviour
     /// </summary>
     public void Equip()
     {
-        if (IsColliding == true)
+        if (IsColliding == true && CanPick == true)
         {
             ID = TempID;
             EquipWeapon(ID);
             DestroyWeapon();
             CanFireWeapon();
             CanDrop = true;
+            CanPick = false;
         }
     }
 

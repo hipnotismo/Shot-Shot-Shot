@@ -339,7 +339,7 @@ MonoBehaviour:
   playerBody: {fileID: 336018570242028288}
   camHolder: {fileID: 8784395177990493368}
   camWeaponLayer: {fileID: 8802782764770356881}
-  mouseSensitivity: 100
+  mouseSensitivity: 50
 --- !u!114 &9164595911267588544
 MonoBehaviour:
   m_ObjectHideFlags: 0

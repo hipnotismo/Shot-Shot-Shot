@@ -627,9 +627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e97c219b7e522c498dc7672fb092009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 206641363}
-  loadingInterface: {fileID: 176044975}
-  loadingProgressBar: {fileID: 1522064248}
+  Menu: {fileID: 206641363}
+  LoadingInterface: {fileID: 176044975}
+  LoadingProgressBar: {fileID: 1522064248}
 --- !u!1 &989413224
 GameObject:
   m_ObjectHideFlags: 0

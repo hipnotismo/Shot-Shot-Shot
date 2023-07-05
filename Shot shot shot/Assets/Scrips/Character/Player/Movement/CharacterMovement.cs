@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector3 _currentMovement;
 
-    private void OnValidate()
+    private void OnEnable()
     {
         rigidBody ??= GetComponent<Rigidbody>();
         InputManager.MovePlayer += Movement;

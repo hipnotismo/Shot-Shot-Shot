@@ -8,7 +8,7 @@ public class Pause : MonoBehaviour
     public delegate void DeActivationAction();
     public static event DeActivationAction DeActivation;
 
-    private void OnValidate()
+    private void OnEnable()
     {
         InputManager.Pause += EnterPause;
         InputManager.Resume += ExitPause;

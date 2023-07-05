@@ -8,7 +8,9 @@ public class BossHealth : MonoBehaviour
 {
     [SerializeField] private EventMangerScriptable Manager;
     [SerializeField] private string TagToReceive;
- 
+    [SerializeField] private string TagToSend;
+    [SerializeField] string MessageToSend;
+
     [SerializeField] private int BossTotalHealth;
     private void OnEnable()
     {
@@ -29,9 +31,8 @@ public class BossHealth : MonoBehaviour
         Debug.Log(BossTotalHealth);
         if (BossTotalHealth < 1)
         {
-
+            Manager.TriggerEvent(TagToSend, new Dictionary<string, object> { { MessageToSend, null } });
             Destroy(gameObject);
-            Time.timeScale = 0;
         }
     }
 }

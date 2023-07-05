@@ -20,7 +20,7 @@ public class PlayerCamera : MonoBehaviour
 
     private float xRotation;
 
-    private void OnValidate()
+    private void OnEnable()
     {
         InputManager.MoveCamera += CameraMovement;
     }
