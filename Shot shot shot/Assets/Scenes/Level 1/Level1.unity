@@ -3384,6 +3384,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1960106568188214353, guid: 9a10200df0f98374186423661e42a4c0, type: 3}
   m_PrefabInstance: {fileID: 1469152723}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1496413505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8230075940641779958, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 2084632268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1497815670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5000,6 +5005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2235673838889684861, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+      propertyPath: PauseButton
+      value: 
+      objectReference: {fileID: 1496413505}
     - target: {fileID: 4783103650597181627, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5084,7 +5093,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 670446934695467573, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3303835926908097470, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
     m_AddedGameObjects: []

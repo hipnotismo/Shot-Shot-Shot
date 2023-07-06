@@ -11,7 +11,6 @@ public class GameOver : MonoBehaviour
     private void OnEnable()
     {
         m_EventSystem = EventSystem.current;
-        Time.timeScale = 1f; //the game need this to be somewhere to re start correctly and it fits here
         PlayerLife.GameOver += GamerOver;
     }
 

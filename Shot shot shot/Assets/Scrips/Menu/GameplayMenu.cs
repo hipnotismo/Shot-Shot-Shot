@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameplayMenu : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private GameObject PauseButton;
 
     [SerializeField] private string MenuToReturn;
+    private EventSystem m_EventSystem;
 
 
     private void OnEnable()
     {
+        m_EventSystem = EventSystem.current;
+
         Pause.Activation += ActivatePause;
         Pause.DeActivation += DeactivatePause;
     }
@@ -33,11 +38,9 @@ public class GameplayMenu : MonoBehaviour
     /// </summary>
     public void Retry()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-
     }
     public void ExitGame()
     {
@@ -52,6 +55,7 @@ public class GameplayMenu : MonoBehaviour
         {
 
             PauseMenu.SetActive(true);
+            m_EventSystem.SetSelectedGameObject(PauseButton);
 
         }
         else
