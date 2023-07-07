@@ -13,9 +13,11 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] private float speed = 300;
     private Transform InitialPosition;
 
+
     void OnEnable()
     {
         Manager.StartListening(TagToReceive, MoveDoorToPoint);
+
     }
 
     void OnDisable()
