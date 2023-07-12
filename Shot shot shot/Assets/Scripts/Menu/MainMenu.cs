@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class that holds the methods accesible from the main menu
+/// </summary>
 public class MainMenu : MonoBehaviour
 {
     public GameObject Menu;
@@ -11,6 +14,10 @@ public class MainMenu : MonoBehaviour
     public Image LoadingProgressBar;
     List<AsyncOperation> ScenesToLoad = new List<AsyncOperation>();
 
+    /// <summary>
+    /// takes on a string and loads and scene with that name
+    /// </summary>
+    /// <param name="SceneName"></param>
     public void LoadLevel(string SceneName)
     {
         HideMenu();
@@ -19,21 +26,34 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadingScreen());
     }
 
+    /// <summary>
+    /// Hides the canvas object
+    /// </summary>
     public void HideMenu()
     {
         Menu.SetActive(false);
     }
 
+    /// <summary>
+    /// Activates teh canvas object
+    /// </summary>
     public void ShowMenu()
     {
         Menu.SetActive(true);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void ShowLoadingScreen()
     {
         LoadingInterface.SetActive(true);
     }
 
+    /// <summary>
+    /// Takes an image and slowly fills it up
+    /// </summary>
+    /// <returns></returns>
     IEnumerator LoadingScreen()
     {
         float totalProgress = 0;
@@ -48,6 +68,9 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Closes game
+    /// </summary>
     public void ExitGame()
     {
         Application.Quit();

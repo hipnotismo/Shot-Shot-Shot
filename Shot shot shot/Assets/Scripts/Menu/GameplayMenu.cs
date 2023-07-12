@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+///  Class that holds the methods accesible from the gameplay menu
+/// </summary>
 public class GameplayMenu : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
@@ -10,7 +13,9 @@ public class GameplayMenu : MonoBehaviour
     [SerializeField] private string MenuToReturn;
     private EventSystem m_EventSystem;
 
-
+    /// <summary>
+    /// Subscribe to pause delegates and assigns current event system
+    /// </summary>
     private void OnEnable()
     {
         m_EventSystem = EventSystem.current;
@@ -19,12 +24,18 @@ public class GameplayMenu : MonoBehaviour
         Pause.DeActivation += DeactivatePause;
     }
 
+    /// <summary>
+    /// Unsubscribe to pause delegates
+    /// </summary>
     private void OnDisable()
     {
         Pause.Activation -= ActivatePause;
         Pause.DeActivation -= DeactivatePause;
     }
-    public void RetrunToMain()
+    /// <summary>
+    /// Loads main menu scene
+    /// </summary>
+    public void ReturnToMain()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(MenuToReturn);
@@ -36,10 +47,11 @@ public class GameplayMenu : MonoBehaviour
     /// </summary>
     public void Retry()
     {
-        //Time.timeScale = 1;
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    /// <summary>
+    /// Exist game
+    /// </summary>
     public void ExitGame()
     {
         Application.Quit();
@@ -47,7 +59,7 @@ public class GameplayMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Gets called by the input manager to activate or deactivate the pause
+    /// Gets called by the input manager to activate the pause
     /// </summary>
     public void ActivatePause()
     {
@@ -64,6 +76,10 @@ public class GameplayMenu : MonoBehaviour
             Debug.Log(nameof(PauseMenu) + " is null");
         }
     }
+
+    /// <summary>
+    /// Gets called by the input manager to deactivate the pause
+    /// </summary>
     public void DeactivatePause()
     {
         if (PauseMenu != null)

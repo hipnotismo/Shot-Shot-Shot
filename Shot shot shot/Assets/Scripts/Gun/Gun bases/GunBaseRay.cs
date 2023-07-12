@@ -1,21 +1,32 @@
 using UnityEngine;
 
+/// <summary>
+/// Base class for all raycast weapons
+/// </summary>
 public class GunBaseRay : GunBase
 {
     [SerializeField] GunTrailData TailData;
     [SerializeField] TrailCreation BulletTrail;
 
+    /// <summary>
+    /// Subscribes to ShootWeapon
+    /// </summary>
     private void OnEnable()
     {
         FireWeapon.ShootWeapon += Shoot;
     }
 
+    /// <summary>
+    /// Unsubscribes to ShootWeapon
+    /// </summary>
     private void OnDisable()
     {
         FireWeapon.ShootWeapon -= Shoot;
     }
 
-
+    /// <summary>
+    /// Method that is call by the input manager to shoot bullets
+    /// </summary>
     public override void Shoot()
     {
         RaycastHit hit;

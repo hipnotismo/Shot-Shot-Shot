@@ -13,6 +13,10 @@ public class PickUpCollision : MonoBehaviour
     [SerializeField] private GunData GunData;
 
 
+    /// <summary>
+    /// Triggers event on collision
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == CanCollideTag)
@@ -21,11 +25,18 @@ public class PickUpCollision : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Triggers event on exit
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionExit(Collision collision)
     {
         Manager.TriggerEvent(TagToSend[1], new Dictionary<string, object> { { MessageToSend, null } });
     }
 
+    /// <summary>
+    /// Triggers event on destruction
+    /// </summary>
     private void OnDestroy()
     {
         Manager.TriggerEvent(TagToSend[1], new Dictionary<string, object> { { MessageToSend, null } });

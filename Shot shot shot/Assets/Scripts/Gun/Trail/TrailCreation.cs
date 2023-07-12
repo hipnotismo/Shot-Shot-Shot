@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Creation of trails
+/// </summary>
 public class TrailCreation : MonoBehaviour
 {
     [SerializeField] GunTrailData TailData;
@@ -12,7 +15,7 @@ public class TrailCreation : MonoBehaviour
     }
 
     /// <summary>
-    /// Instantiates a partile trail base on the pass parameters, the creation of the trail happens inside a coroutine 
+    /// Instantiates a particle trail base on the pass parameters
     /// </summary>
     /// <param name="BulletSpawnPoint"></param>
     /// <param name="identity"></param>
@@ -26,6 +29,14 @@ public class TrailCreation : MonoBehaviour
         StartCoroutine(SpawnTrail(trail, Point, Normal, MadeImpact));
     }
 
+    /// <summary>
+    /// Takes the previous trail and makes it move until it reaches its destination 
+    /// </summary>
+    /// <param name="Trail"></param>
+    /// <param name="HitPoint"></param>
+    /// <param name="HitNormal"></param>
+    /// <param name="MadeImpact"></param>
+    /// <returns></returns>
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact)
     {
       

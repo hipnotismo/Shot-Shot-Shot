@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Manages game over menu
+/// </summary>
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private GameObject GameOverFace;
@@ -8,12 +11,18 @@ public class GameOver : MonoBehaviour
 
     private EventSystem m_EventSystem;
 
+
+    /// <summary>
+    /// Sets the event system as the current and stars listening for messages
+    /// </summary>
     private void OnEnable()
     {
         m_EventSystem = EventSystem.current;
         PlayerLife.GameOver += GamerOver;
     }
-
+    /// <summary>
+    /// Stops listening for messages
+    /// </summary>
     private void OnDisable()
     {
         PlayerLife.GameOver -= GamerOver;
@@ -27,7 +36,5 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 0;
         GameOverFace.SetActive(true);
         m_EventSystem.SetSelectedGameObject(GameOverButton);
-
-
     }
 }

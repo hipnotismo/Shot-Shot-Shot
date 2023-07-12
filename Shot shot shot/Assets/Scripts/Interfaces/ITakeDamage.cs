@@ -2,7 +2,7 @@
 /// Interface to implement damage related code
 /// example:
 /// Enemy class triggers on enter Other.TakeDamage
-/// That can activate the TakeDage field from any class that has it like Player, Obstacle, etc.
+/// That can activate the TakeDamage field from any class that has it like Player, Obstacle, etc.
 /// </summary>
 public interface ITakeDamage
 {

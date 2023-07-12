@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Base class for all projectile weapons
+/// </summary>
 public class GunBaseProyect : GunBase
 {
     [SerializeField] GunProjectileData BulletData;
@@ -7,19 +10,25 @@ public class GunBaseProyect : GunBase
 
     private Vector3 destination;
 
+    /// <summary>
+    /// Set BulletSpawnPoint and subscribes to ShootWeapon
+    /// </summary>
     private void OnEnable()
     {
         BulletSpawnPoint = this.transform;
         FireWeapon.ShootWeapon += Shoot;
     }
 
+    /// <summary>
+    /// Unsubscribes from ShootWeapon
+    /// </summary>
     private void OnDisable()
     {
         FireWeapon.ShootWeapon -= Shoot;
     }
 
     /// <summary>
-    /// method that subscribes
+    /// Method that is call by the input manager to create bullets
     /// </summary>
     public override void Shoot()
     {

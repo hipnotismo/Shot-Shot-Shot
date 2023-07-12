@@ -1,8 +1,11 @@
 using UnityEngine;
 
+/// <summary>
+/// Sets time to 1 and de activates the TUTORIAL menu
+/// </summary>
 public class TutorialMenu : MonoBehaviour
 {
-    [SerializeField] GameObject TutorialPromp;
+    [SerializeField] GameObject TutorialPrompt;
 
     /// <summary>
     /// disables the game object that hold the tutorial instructions and turns the game time to 1 
@@ -10,6 +13,6 @@ public class TutorialMenu : MonoBehaviour
     public void HideMenu()
     {
         Time.timeScale = 1;
-        TutorialPromp.SetActive(false);
+        TutorialPrompt.SetActive(false);
     }
 }
