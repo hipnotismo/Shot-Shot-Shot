@@ -12,18 +12,25 @@ public class BossHealth : MonoBehaviour
     [SerializeField] string MessageToSend;
 
     [SerializeField] private int BossTotalHealth;
+
+    /// <summary>
+    /// Stars listening for messages
+    /// </summary>
     private void OnEnable()
     {
         Manager.StartListening(TagToReceive, LossBossHealth);
     }
 
+    /// <summary>
+    /// Stops listening for messages
+    /// </summary>
     private void OnDisable()
     {
         Manager.StopListening(TagToReceive, LossBossHealth);
     }
 
     /// <summary>
-    /// Normally call from another class or method to reduce the bossTotalHealt and check if it less than zero to destroy the object and activate the win screen.
+    /// Normally call from another class or method to reduce the bossTotalHealth and check if it less than zero to destroy the object and activate the win screen.
     /// </summary>
     public void LossBossHealth(Dictionary<string, object> message)
     {

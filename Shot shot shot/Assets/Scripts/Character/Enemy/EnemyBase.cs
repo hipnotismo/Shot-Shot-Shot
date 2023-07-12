@@ -1,4 +1,5 @@
 using UnityEngine;
+
 /// <summary>
 /// Basic fields present in all enemies
 /// </summary>
@@ -8,11 +9,18 @@ public class EnemyBase : MonoBehaviour, ITakeDamage
     [SerializeField] string CanTakeDamageFromTag;
     [SerializeField] string CanDamageTag;
 
+    /// <summary>
+    /// Damage interface
+    /// </summary>
     public void TakeDamage()
     {
         Destroy(gameObject);       
     }
 
+    /// <summary>
+    ///     Triggers teh damage interface when a game object with the right tag collides with it
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
        

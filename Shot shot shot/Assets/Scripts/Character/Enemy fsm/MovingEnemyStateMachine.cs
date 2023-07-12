@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Enemy state machine
+/// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
 public class MovingEnemyStateMachine : MonoBehaviour
 {
@@ -18,11 +21,17 @@ public class MovingEnemyStateMachine : MonoBehaviour
 
     public float arrivalThreshold = 2f;
 
+    /// <summary>
+    /// Sets the first state
+    /// </summary>
     private void OnEnable()
     {
         currentState = wanderingState;
     }
 
+    /// <summary>
+    /// Updates the behavior of the current state
+    /// </summary>
     private void Update()
     {
         currentState = currentState.Behavior(this);
