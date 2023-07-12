@@ -1,4 +1,5 @@
 # Shot-Shot-Shot
+![Shoot](Shot%20Shot%20Shot/Res/Title/Screenshot_1.pngg)
 
 # **` Shot-Shot-Shot`** is a clasic shooter game made in unity. 
 
