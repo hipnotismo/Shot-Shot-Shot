@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class TrailCreation : MonoBehaviour
 {
-    [SerializeField] GunTrailData TailData;
+    [SerializeField] private GunTrailData TailData;
 
     /// <summary>
     /// Plays ParticleSystem

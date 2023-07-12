@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class that manages the firing of weapons
+/// </summary>
 public class FireWeapon : MonoBehaviour
 {
     public delegate void ShootAction();
@@ -7,12 +10,18 @@ public class FireWeapon : MonoBehaviour
 
     private bool IsWeaponEquip = false;
 
+    /// <summary>
+    /// Subscribes to input manager and pick up weapon
+    /// </summary>
     private void OnEnable()
     {
         InputManager.ShootFromPickUp += Shoot;
         PickUpWeapon.CanFireWeapon += DetectEquip;
     }
 
+    /// <summary>
+    /// Unsubscribes to input manager and pick up weapon
+    /// </summary>
     private void OnDisable()
     {
         InputManager.ShootFromPickUp -= Shoot;
@@ -20,6 +29,9 @@ public class FireWeapon : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// If a weapon is equip activates the shoot method of that weapon
+    /// </summary>
     private void Shoot()
     {
 
@@ -29,6 +41,9 @@ public class FireWeapon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Switches the IsWeaponEquip bool
+    /// </summary>
     private void DetectEquip()
     {
         IsWeaponEquip = !IsWeaponEquip;

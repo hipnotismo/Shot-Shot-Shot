@@ -7,8 +7,6 @@ public class GunBase : MonoBehaviour
 {
     public Transform BulletSpawnPoint;
 
-    //public Camera cam;
-
     /// <summary>
     /// Sets rigid body as kinematic
     /// </summary>

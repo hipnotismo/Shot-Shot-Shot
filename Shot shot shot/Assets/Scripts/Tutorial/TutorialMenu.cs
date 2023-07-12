@@ -5,7 +5,7 @@ using UnityEngine;
 /// </summary>
 public class TutorialMenu : MonoBehaviour
 {
-    [SerializeField] GameObject TutorialPrompt;
+    [SerializeField] private GameObject TutorialPrompt;
 
     /// <summary>
     /// Disables the game object that hold the tutorial instructions and turns the game time to 1 

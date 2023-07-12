@@ -335,10 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7f845c758ab3042859f842509b5a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBody: {fileID: 336018570242028288}
-  camHolder: {fileID: 8784395177990493368}
-  camWeaponLayer: {fileID: 8802782764770356881}
-  mouseSensitivity: 50
+  PlayerBody: {fileID: 336018570242028288}
+  CamHolder: {fileID: 8784395177990493368}
+  CamWeaponLayer: {fileID: 8802782764770356881}
+  MouseSensitivity: 100
 --- !u!114 &9164595911267588544
 MonoBehaviour:
   m_ObjectHideFlags: 0

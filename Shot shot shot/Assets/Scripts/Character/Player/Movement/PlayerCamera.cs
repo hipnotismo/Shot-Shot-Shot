@@ -1,51 +1,56 @@
 using UnityEngine;
 
 /// <summary>
-/// Controls the camero so it moves with the mouse
+/// Controls the camera so it moves with the mouse or joystick
 /// </summary>
 public class PlayerCamera : MonoBehaviour
 {
     [Header("Setup")]
 
-    [SerializeField] private Transform playerBody;
+    [SerializeField] private Transform PlayerBody;
 
-    [SerializeField] private Transform camHolder;
-    [SerializeField] private Transform camWeaponLayer;
+    [SerializeField] private Transform CamHolder;
+    [SerializeField] private Transform CamWeaponLayer;
 
     [Header("Movement")]
 
-    [SerializeField] private float mouseSensitivity = 100f;
+    [SerializeField] private float MouseSensitivity = 100f;
 
-    private Vector2 mouseRot;
+    private Vector2 MouseRot;
 
-    private float xRotation;
-
+    private float XRotation;
+    
+    /// <summary>
+    /// Subscribes to input manager
+    /// </summary>
     private void OnEnable()
     {
         InputManager.MoveCamera += CameraMovement;
     }
 
+    /// <summary>
+    /// Updates teh mouse position and player rotation
+    /// </summary>
     private void Update()
     {
-        var mouseX = mouseRot.x * mouseSensitivity * Time.deltaTime;
-        var mouseY = mouseRot.y * mouseSensitivity * Time.deltaTime;
+        var mouseX = MouseRot.x * MouseSensitivity * Time.deltaTime;
+        var mouseY = MouseRot.y * MouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -70f, 70f);
+        XRotation -= mouseY;
+        XRotation = Mathf.Clamp(XRotation, -70f, 70f);
 
-        camHolder.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        camWeaponLayer.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        CamHolder.localRotation = Quaternion.Euler(XRotation, 0f, 0f);
+        CamWeaponLayer.localRotation = Quaternion.Euler(XRotation, 0f, 0f);
 
-        playerBody.Rotate(Vector3.up * mouseX);
+        PlayerBody.Rotate(Vector3.up * mouseX);
     }
+
     /// <summary>
     /// Gets and actualices the camera vector every time the InputManager detects movement
     /// </summary>
     /// <param name="inputValue"></param>
     public void CameraMovement(Vector2 inputValue)
     {
-        mouseRot = inputValue;
+        MouseRot = inputValue;
     }
-
-    
 }

@@ -6,13 +6,13 @@ using UnityEngine.AI;
 /// </summary>
 public class ChasePlayer : MonoBehaviour
 {
-    [SerializeField] NavMeshAgent enemy;
-    [SerializeField] Transform player;
+    [SerializeField] private NavMeshAgent enemy;
+    [SerializeField] private Transform player;
 
     /// <summary>
     /// Gets current nav mesh in the game object
     /// </summary>
-    void Start()
+    private void Start()
     {
         enemy=GetComponent<NavMeshAgent>();
     }
@@ -20,7 +20,7 @@ public class ChasePlayer : MonoBehaviour
     /// <summary>
     /// Moves game object to the player transform
     /// </summary>
-    void Update()
+    private void Update()
     {
         enemy.SetDestination(player.position);
     }

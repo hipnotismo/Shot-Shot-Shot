@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Class that controls input
+/// </summary>
 public class InputManager : MonoBehaviour
 {
     /// <summary>
@@ -35,34 +38,56 @@ public class InputManager : MonoBehaviour
     public static event ResumeAction Resume;
 
     private bool IsPause = false;
+
+    /// <summary>
+    /// Detects movement 
+    /// </summary>
+    /// <param name="inputValue"></param>
     public void OnMove(InputValue inputValue)
     {
         var movementInput = inputValue.Get<Vector2>();
         MovePlayer(movementInput);
     }
 
+    /// <summary>
+    /// Detects camera movement
+    /// </summary>
+    /// <param name="inputValue"></param>
     public void OnLook(InputValue inputValue)
     {
 
         var cameraInput = inputValue.Get<Vector2>();
         MoveCamera(cameraInput);
     }
-
+    
+    /// <summary>
+    /// Detects fire input
+    /// </summary>
     public void OnFires()
     {
         ShootFromPickUp();
     }
 
+
+    /// <summary>
+    /// Detects pick up input
+    /// </summary>
     public void OnPickUp()
     {
         PickUp();
     }
 
+    /// <summary>
+    /// Detects drop input
+    /// </summary>
     public void OnDrop()
     {
         Drop();
     }
 
+    /// <summary>
+    /// Detects pause input
+    /// </summary>
     public void OnPause()
     {
         if (IsPause == false)

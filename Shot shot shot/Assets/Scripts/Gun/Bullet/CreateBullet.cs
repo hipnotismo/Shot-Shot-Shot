@@ -5,9 +5,9 @@ using UnityEngine;
 /// </summary>
 public class CreateBullet : MonoBehaviour
 {
-    [SerializeField] GunProjectileData BulletData;
-    [SerializeField] float DestroyTime;
-    [SerializeField] float ForceModifier = 50.0f;
+    [SerializeField] private GunProjectileData BulletData;
+    [SerializeField] private float DestroyTime;
+    [SerializeField] private float ForceModifier = 50.0f;
 
     /// <summary>
     /// Instantiates a prefab and adds force to it

@@ -17,16 +17,26 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector3 _currentMovement;
 
+    /// <summary>
+    /// Gets teh current rigidbody and subscribes to input manager
+    /// </summary>
     private void OnEnable()
     {
         rigidBody ??= GetComponent<Rigidbody>();
         InputManager.MovePlayer += Movement;
     }
 
+    /// <summary>
+    /// Unsubscribes to the input manager
+    /// </summary>
     private void OnDisable()
     {
         InputManager.MovePlayer -= Movement;
     }
+
+    /// <summary>
+    /// Checks if there is a rigidbody
+    /// </summary>
     private void Start()
     {
         if (!rigidBody)
@@ -37,6 +47,9 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detects if there is movement 
+    /// </summary>
     private void FixedUpdate()
     {
         if (_currentMovement.magnitude >= 1f)

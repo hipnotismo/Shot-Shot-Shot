@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that controls the equipment and destruction of weapons, checks if there ara equiped weapons
+/// </summary>
 public class PickUpWeapon : MonoBehaviour
 {
     public delegate void EquipAction(int ID);
@@ -25,6 +28,9 @@ public class PickUpWeapon : MonoBehaviour
     [SerializeField] private bool CanDrop = false;
     [SerializeField] private bool CanPick = true;
 
+    /// <summary>
+    /// Subscribes to input system and star listening for messages 
+    /// </summary>
     private void OnEnable()
     {
         InputManager.PickUp += Equip;
@@ -34,6 +40,9 @@ public class PickUpWeapon : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Unsubscribes to input system and stops listening for messages 
+    /// </summary>
     private void OnDisable()
     {
         InputManager.PickUp -= Equip;
@@ -44,6 +53,9 @@ public class PickUpWeapon : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Calls the methods related to weapon destruction and switch bools
+    /// </summary>
     private void Drop()
     {
         if (CanDrop == true)
@@ -56,7 +68,7 @@ public class PickUpWeapon : MonoBehaviour
     }
 
     /// <summary>
-    /// Sends the ID to the GunManager, destroys the wolrd weapon
+    /// Sends the ID to the GunManager, destroys the world weapon  and switch bools
     /// </summary>
     public void Equip()
     {

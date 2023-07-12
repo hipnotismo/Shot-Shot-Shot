@@ -5,8 +5,8 @@ using UnityEngine;
 /// </summary>
 public class GunManager : MonoBehaviour
 {
-    [SerializeField] WeaponList WeaponList;
-    [SerializeField] Transform WeaponPoint;
+    [SerializeField] private WeaponList WeaponList;
+    [SerializeField] private Transform WeaponPoint;
 
     /// <summary>
     /// Subscribes to events

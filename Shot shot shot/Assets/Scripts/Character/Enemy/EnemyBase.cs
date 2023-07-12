@@ -6,8 +6,8 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour, ITakeDamage
 {
 
-    [SerializeField] string CanTakeDamageFromTag;
-    [SerializeField] string CanDamageTag;
+    [SerializeField] private string CanTakeDamageFromTag;
+    [SerializeField] private string CanDamageTag;
 
     /// <summary>
     /// Damage interface

@@ -16,7 +16,7 @@ public class OpenDoor : MonoBehaviour
     /// <summary>
     /// Stars listening for messages
     /// </summary>
-    void OnEnable()
+    private void OnEnable()
     {
         Manager.StartListening(TagToReceive, MoveDoorToPoint);
 
@@ -24,7 +24,7 @@ public class OpenDoor : MonoBehaviour
     /// <summary>
     /// Stops listening for message
     /// </summary>
-    void OnDisable()
+    private void OnDisable()
     {
         Manager.StopListening(TagToReceive, MoveDoorToPoint);
     }
@@ -32,7 +32,7 @@ public class OpenDoor : MonoBehaviour
     /// <summary>
     /// Gets game object transform 
     /// </summary>
-    void Start()
+    private void Start()
     {
         InitialPosition = GetComponent<Transform>();
     }
@@ -41,7 +41,7 @@ public class OpenDoor : MonoBehaviour
     /// <summary>
     /// Recibes a message to start a coroutine 
     /// </summary>
-    void MoveDoorToPoint(Dictionary<string, object> message)
+    public void MoveDoorToPoint(Dictionary<string, object> message)
     {
         UnityEngine.Debug.Log(this.name + " is receiving the message ");
 

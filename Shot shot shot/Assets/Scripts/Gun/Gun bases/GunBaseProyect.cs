@@ -5,8 +5,8 @@ using UnityEngine;
 /// </summary>
 public class GunBaseProyect : GunBase
 {
-    [SerializeField] GunProjectileData BulletData;
-    [SerializeField] CreateBullet BulletCreation;
+    [SerializeField] private GunProjectileData BulletData;
+    [SerializeField] private CreateBullet BulletCreation;
 
     private Vector3 Destination;
 

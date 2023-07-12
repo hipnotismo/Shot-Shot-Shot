@@ -9,10 +9,10 @@ using System.Collections.Generic;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Menu;
-    public GameObject LoadingInterface;
-    public Image LoadingProgressBar;
-    List<AsyncOperation> ScenesToLoad = new List<AsyncOperation>();
+    [SerializeField] public GameObject Menu;
+    [SerializeField] public GameObject LoadingInterface;
+    [SerializeField] public Image LoadingProgressBar;
+    private List<AsyncOperation> ScenesToLoad = new List<AsyncOperation>();
 
     /// <summary>
     /// takes on a string and loads and scene with that name

@@ -48,7 +48,7 @@ public class WanderingState : IEnemyState
     /// <param name="range"></param>
     /// <param name="result"></param>
     /// <returns></returns>
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    public bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
         Vector3 randomPoint = center + Random.insideUnitSphere * range; 
         NavMeshHit hit;

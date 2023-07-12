@@ -5,8 +5,8 @@ using UnityEngine;
 /// </summary>
 public class GunBaseRay : GunBase
 {
-    [SerializeField] GunTrailData TailData;
-    [SerializeField] TrailCreation BulletTrail;
+    [SerializeField] private GunTrailData TailData;
+    [SerializeField] private TrailCreation BulletTrail;
 
     /// <summary>
     /// Subscribes to ShootWeapon

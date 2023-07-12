@@ -5,7 +5,7 @@ using UnityEngine;
 /// </summary>
 public class DestroyWorldWeapon : MonoBehaviour
 {
-    [SerializeField] string CanCollideTag;
+    [SerializeField] private string CanCollideTag;
 
     /// <summary>
     /// Subscribes to the delegate on collision
