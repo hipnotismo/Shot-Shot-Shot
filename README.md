@@ -5,7 +5,7 @@
 
 ### Description
 
-A simple game where you shot skeletons and colect treasure chest
+A simple game where you shoot skeletons and colect treasure chests
 
 ### Controls
 
