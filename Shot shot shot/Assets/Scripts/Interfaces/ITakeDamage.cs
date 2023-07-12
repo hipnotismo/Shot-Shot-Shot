@@ -6,5 +6,8 @@
 /// </summary>
 public interface ITakeDamage
 {
+    /// <summary>
+    /// Empty interface 
+    /// </summary>
     public void TakeDamage();
 }

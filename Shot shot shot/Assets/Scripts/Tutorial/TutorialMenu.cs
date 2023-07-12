@@ -8,7 +8,7 @@ public class TutorialMenu : MonoBehaviour
     [SerializeField] GameObject TutorialPrompt;
 
     /// <summary>
-    /// disables the game object that hold the tutorial instructions and turns the game time to 1 
+    /// Disables the game object that hold the tutorial instructions and turns the game time to 1 
     /// </summary>
     public void HideMenu()
     {

@@ -8,6 +8,9 @@ public class TrailCreation : MonoBehaviour
 {
     [SerializeField] GunTrailData TailData;
 
+    /// <summary>
+    /// Plays ParticleSystem
+    /// </summary>
     public void ParticlePlay()
     {
         TailData.ShootingSystem.Play();

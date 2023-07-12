@@ -4072,6 +4072,10 @@ PrefabInstance:
       propertyPath: GameOverFace
       value: 
       objectReference: {fileID: 479855443}
+    - target: {fileID: 6423202606486366669, guid: 11211163fea3f76489dada6f320e8844, type: 3}
+      propertyPath: GameOverButton
+      value: 
+      objectReference: {fileID: 2084632270}
     - target: {fileID: 6442610613629660769, guid: 11211163fea3f76489dada6f320e8844, type: 3}
       propertyPath: m_Name
       value: ---Mangers---
@@ -4464,6 +4468,10 @@ PrefabInstance:
     - target: {fileID: 5109009090571639027, guid: 642215bd85787ab47b7c36556dd65eae, type: 3}
       propertyPath: m_Name
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864146998792373081, guid: 642215bd85787ab47b7c36556dd65eae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8281733411871252140, guid: 642215bd85787ab47b7c36556dd65eae, type: 3}
       propertyPath: m_RootOrder
@@ -5105,6 +5113,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6653803904009786940, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
   m_PrefabInstance: {fileID: 2084632268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2084632270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161558158258187198, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 2084632268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2117864304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5311,7 +5324,7 @@ MonoBehaviour:
   Manager: {fileID: 11400000, guid: a389b3a6aab310c4fa9881906ec7e035, type: 2}
   TagToReceive: asf
   EndPosition: {fileID: 7421961859851994929}
-  speed: 300
+  Speed: 300
 --- !u!1 &2594320618728103972
 GameObject:
   m_ObjectHideFlags: 0

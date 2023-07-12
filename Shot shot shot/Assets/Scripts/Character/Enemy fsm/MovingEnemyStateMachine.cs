@@ -17,10 +17,6 @@ public class MovingEnemyStateMachine : MonoBehaviour
 
     public Transform centrePoint;
 
-    public Transform targetDoor;
-
-    public float arrivalThreshold = 2f;
-
     /// <summary>
     /// Sets the first state
     /// </summary>

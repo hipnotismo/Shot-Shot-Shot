@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Activates teh canvas object
+    /// Activates the canvas object
     /// </summary>
     public void ShowMenu()
     {
@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Activates the loading interface
     /// </summary>
     public void ShowLoadingScreen()
     {

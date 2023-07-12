@@ -12,7 +12,7 @@ public class EventManagerScriptable : ScriptableObject
         = new Dictionary<string, Action<Dictionary<string, object>>>();
 
     /// <summary>
-    /// stars listening for messages
+    /// Stars listening for messages
     /// </summary>
     /// <param name="eventName"></param>
     /// <param name="listener"></param>

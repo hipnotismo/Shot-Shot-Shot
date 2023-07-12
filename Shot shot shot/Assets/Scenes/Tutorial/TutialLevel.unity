@@ -1006,6 +1006,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431768122e757e54fab3a2434e7cd074, type: 3}
+--- !u!1 &539578884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3303835926908097470, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 1070042403011115910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &605622027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1679,6 +1684,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1008942480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2235673838889684861, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+  m_PrefabInstance: {fileID: 1070042403011115910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc78617bbb775b24ab90eb30979f67ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1012044592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,7 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb6db469ddc26541bbda613ddcfe712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutorialButton: {fileID: 0}
+  TutorialButton: {fileID: 539578884}
 --- !u!1001 &1016296391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3830,6 +3846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 670446934695467573, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+      propertyPath: TutorialPrompt
+      value: 
+      objectReference: {fileID: 539578884}
     - target: {fileID: 1163433272476686269, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -4039,6 +4059,14 @@ PrefabInstance:
     - target: {fileID: 8191744133523232645, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
       propertyPath: m_Colors.m_NormalColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191744133523232645, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1008942480}
+    - target: {fileID: 8191744133523232645, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMain
       objectReference: {fileID: 0}
     - target: {fileID: 8801855028928216083, guid: 78716e0ddbe0cf549ba114fb000d1acf, type: 3}
       propertyPath: m_fontAsset

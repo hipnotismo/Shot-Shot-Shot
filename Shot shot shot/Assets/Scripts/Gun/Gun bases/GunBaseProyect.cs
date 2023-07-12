@@ -8,7 +8,7 @@ public class GunBaseProyect : GunBase
     [SerializeField] GunProjectileData BulletData;
     [SerializeField] CreateBullet BulletCreation;
 
-    private Vector3 destination;
+    private Vector3 Destination;
 
     /// <summary>
     /// Set BulletSpawnPoint and subscribes to ShootWeapon
@@ -40,15 +40,15 @@ public class GunBaseProyect : GunBase
 
         if (Physics.Raycast(spawnPosition, spawnDirection, out hit, Mathf.Infinity))
         {
-            destination = hit.point;
-            BulletCreation.BulletCreation(spawnPosition, destination);
+            Destination = hit.point;
+            BulletCreation.BulletCreation(spawnPosition, Destination);
 
         }
         else
         {
-            destination = spawnPosition
+            Destination = spawnPosition
                 + spawnDirection * BulletData.Range;
-            BulletCreation.BulletCreation(spawnPosition, destination);
+            BulletCreation.BulletCreation(spawnPosition, Destination);
         }
     }
 }

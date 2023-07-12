@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletDamage : MonoBehaviour
 {
     /// <summary>
-    /// Mothod that activates teh damage interface when the game object collides with another
+    /// Method that activates teh damage interface when the game object collides with another
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
