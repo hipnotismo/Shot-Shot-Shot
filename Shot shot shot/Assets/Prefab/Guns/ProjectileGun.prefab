@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6425841232411243260}
   - component: {fileID: 7014801754304914066}
-  - component: {fileID: 6735899393929398128}
   - component: {fileID: 3274294944938105425}
+  - component: {fileID: -1537371445141406209}
   - component: {fileID: 969699935639949372}
   - component: {fileID: -6588709983893786949}
   - component: {fileID: -7938575905387571260}
@@ -47,7 +47,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3547490993807836558}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &6735899393929398128
+--- !u!65 &3274294944938105425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547490993807836558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-1537371445141406209
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,27 +95,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3274294944938105425
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547490993807836558}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &969699935639949372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpawnPoint: {fileID: 7459635815082358981}
-  cam: {fileID: 0}
   BulletData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
   BulletCreation: {fileID: -7938575905387571260}
 --- !u!114 &-6588709983893786949
@@ -139,6 +138,7 @@ MonoBehaviour:
   BulletData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
   DestroyTime: 2
   ForceModifier: 50
+  m_bulletPrefab: {fileID: 4104417616628286383, guid: 7db0e9104da8b3245a084a019f6d5c1e, type: 3}
 --- !u!1 &9186912165357042527
 GameObject:
   m_ObjectHideFlags: 0
