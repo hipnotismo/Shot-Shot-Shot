@@ -1,28 +1,36 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
+/// <summary>
+/// Class that takes damage for the player
+/// </summary>
 public class PlayerLife : MonoBehaviour, ITakeDamage
 {
     public delegate void GameOverAction();
     public static event GameOverAction GameOver;
 
-    [SerializeField] PlayerData PlayerData;
-    [SerializeField] Image lifebar;
+    public delegate void LifeUIAction(float LifeFill);
+    public static event LifeUIAction LifeBarUI;
+
+    [SerializeField] private PlayerData PlayerData;
 
     private float TempLife;
     private bool immune = false;
 
+    /// <summary>
+    /// Sets TempLife as the player max life 
+    /// </summary>
     private void Start()
     {
         TempLife = PlayerData.Life;
-       
     }
 
+    /// <summary>
+    /// Updates the LifeBarUI with the current life divided by the max life and checks if the player has lost
+    /// </summary>
     private void Update()
     {
-
-        lifebar.fillAmount =  TempLife / PlayerData.Life;
+        LifeBarUI(TempLife / PlayerData.Life);
 
         if (TempLife == 0)
         {
@@ -30,7 +38,9 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
         }
     }
    
-
+    /// <summary>
+    /// When the damage interface is activated it lowers the temporary life and activates the immunity coroutine
+    /// </summary>
     public void TakeDamage() 
     {
         if (immune==false)
@@ -40,6 +50,10 @@ public class PlayerLife : MonoBehaviour, ITakeDamage
         }
     }
 
+    /// <summary>
+    /// Activates and deactivates the Inmune bool for three seconds and stops the player from taking damage
+    /// </summary>
+    /// <returns></returns>
     IEnumerator immunity() 
     {
         immune = true;

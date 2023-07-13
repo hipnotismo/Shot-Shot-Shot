@@ -18,7 +18,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 _currentMovement;
 
     /// <summary>
-    /// Gets teh current rigidbody and subscribes to input manager
+    /// Gets the current rigidbody and subscribes to input manager
     /// </summary>
     private void OnEnable()
     {
