@@ -138,7 +138,7 @@ MonoBehaviour:
   BulletData: {fileID: 11400000, guid: 5c92227462b8d074daf832f5e01474c8, type: 2}
   DestroyTime: 2
   ForceModifier: 50
-  m_bulletPrefab: {fileID: 4104417616628286383, guid: 7db0e9104da8b3245a084a019f6d5c1e, type: 3}
+  BaseBulletPrefab: {fileID: 4104417616628286383, guid: 7db0e9104da8b3245a084a019f6d5c1e, type: 3}
 --- !u!1 &9186912165357042527
 GameObject:
   m_ObjectHideFlags: 0
