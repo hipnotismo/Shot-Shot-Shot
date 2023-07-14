@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 /// <summary>
-/// Class that instantiates bullets
+/// Class that manages the bullet pool
 /// </summary>
 public class CreateBullet : MonoBehaviour
 {
@@ -12,49 +12,72 @@ public class CreateBullet : MonoBehaviour
     private Vector3 Destination;
     private Vector3 BulletSpawnPointRef;
 
-    [SerializeField] private BaseBullet m_bulletPrefab;
+    [SerializeField] private BaseBullet BaseBulletPrefab;
 
-    private ObjectPool<BaseBullet> m_bulletPool;
+    private ObjectPool<BaseBullet> BulletPool;
 
+    /// <summary>
+    /// Creates a BaseBullet pool
+    /// </summary>
     private void Awake()
     {
-        m_bulletPool = new ObjectPool<BaseBullet>(CreateBullets, OnGetBullet, OnReleaseBullet, OnDestroyBullet,
+        BulletPool = new ObjectPool<BaseBullet>(CreateBullets, OnGetBullet, OnReleaseBullet, OnDestroyBullet,
                                               false, 40, 100);
     }
 
+    /// <summary>
+    /// Instantiates a new bullet and adds it to the pool if posible
+    /// </summary>
+    /// <returns></returns>
     private BaseBullet CreateBullets()
     {
-        BaseBullet bullet = Instantiate(m_bulletPrefab, BulletSpawnPointRef, Quaternion.identity);
-      //  bullet.SetPosition(BulletSpawnPointRef);
-
-        bullet.SetPool(m_bulletPool);
+        BaseBullet bullet = Instantiate(BaseBulletPrefab, BulletSpawnPointRef, Quaternion.identity);
+        bullet.SetPool(BulletPool);
         return bullet;
     }
 
+    /// <summary>
+    /// What happens when a bullet is requested/ get action
+    /// </summary>
+    /// <param name="bullet"></param>
     private void OnGetBullet(BaseBullet bullet)
     {
         bullet.gameObject.SetActive(true);
         bullet.GetComponent<Rigidbody>().AddForce((Destination - bullet.transform.position).normalized * ForceModifier, ForceMode.Impulse);
         bullet.transform.position = BulletSpawnPointRef;
-        Debug.Log("Bullet position: " + bullet.transform.position);
-
     }
 
+    /// <summary>
+    /// What happens when the a bullet is release
+    /// </summary>
+    /// <param name="bullet"></param>
     private void OnReleaseBullet(BaseBullet bullet)
     {
         bullet.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// What happens when if there are more bullets in the pool that it should
+    /// </summary>
+    /// <param name="bullet"></param>
     private void OnDestroyBullet(BaseBullet bullet)
     {
         Destroy(bullet.gameObject);
     }
 
+    /// <summary>
+    /// Sets local destination
+    /// </summary>
+    /// <param name="TempDestination"></param>
     private void SetDestination(Vector3 TempDestination)
     {
         Destination = TempDestination;
     }
 
+    /// <summary>
+    /// Sets local spawn point
+    /// </summary>
+    /// <param name="TempSpawnPoint"></param>
     private void SetSpawnPoint(Vector3 TempSpawnPoint)
     {
         BulletSpawnPointRef = TempSpawnPoint;
@@ -69,11 +92,6 @@ public class CreateBullet : MonoBehaviour
         SetDestination(destination);
         SetSpawnPoint(BulletSpawnPoint);
 
-        m_bulletPool?.Get();
-        Debug.Log("Original postion of spawn " + BulletSpawnPoint);
-
-        //GameObject projectile = Instantiate(BulletData.Bullet, BulletSpawnPoint, Quaternion.identity);
-        //Destroy(projectile, DestroyTime);
-        //projectile.GetComponent<Rigidbody>().AddForce((destination - projectile.transform.position).normalized * ForceModifier, ForceMode.Impulse);
+        BulletPool?.Get();
     }
 }
