@@ -23,7 +23,7 @@ P or Select to pause
 
 ### Patterns use
 * >Object pooling for bullets
-  >Estate patter for enemy states
+* >Estate patter for enemy states
 
 
 #### Contact information: 
